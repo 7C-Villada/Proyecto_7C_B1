@@ -1,2 +1,2 @@
-# proyecto_7moC_B1
-proyecto final 7mo C burbuja 1
+# Proyecto Final 7°C Burbuja 1
+
