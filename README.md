@@ -29,6 +29,21 @@ pip install -r requirements.txt
 python core/manage.py makemigrations
 python core/manage.py migrate
 python core/manage.py collectstatic
+
+sudo apt-get install mysql-server-5.7
+sudo apt-get install mysql-client-5.7
+```
+
+##### 
+```shell
+
+SUDO mysql
+
+CREATE USER 'usuario' IDENTIFIED BY 'root';
+
+GRANT ALL PRIVILEGES ON *.* TO 'usuario';
+
+CREATE DATABASE proyecto;
 ```
 
 #### Creacion de superusuario
