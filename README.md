@@ -26,8 +26,6 @@
 git clone https://github.com/7C-Villada/Proyecto_7C_B1.git ~/.ProyectoDjango
 cd ~/.ProyectoDjango
 pip install -r requirements.txt
-python core/manage.py makemigrations
-python core/manage.py migrate
 python core/manage.py collectstatic
 
 sudo apt-get install mysql-server-5.7
@@ -44,6 +42,9 @@ CREATE USER 'usuario' IDENTIFIED BY 'root';
 GRANT ALL PRIVILEGES ON *.* TO 'usuario';
 
 CREATE DATABASE proyecto;
+
+python core/manage.py makemigrations
+python core/manage.py migrate
 ```
 
 #### Creacion de superusuario
