@@ -18,6 +18,11 @@
 | PyMySQL| 1.0.2 |
 | pytz| 2021.1 |
 | sqlparse| 0.4.1 |
+| django-admin-interface| 0.15.6
+| django-colorfield| 0.4.1
+| django-flat-responsive| 2.0
+| django-flat-theme| 1.1.4
+| six| 1.15.0
 
 ### Instruccciones
 #### Instalacion manual
