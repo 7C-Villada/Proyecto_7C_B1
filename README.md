@@ -27,6 +27,7 @@
 | django-flat-responsive| 2.0
 | django-flat-theme| 1.1.4
 | six| 1.15.0
+| mercadopago | 2.0.6
 | react| 17.0.2
 | react-dom| 17.0.2
 | react-scripts| 4.0.3
