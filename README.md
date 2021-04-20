@@ -5,34 +5,46 @@
 ## Diagramas:
 
 ## Aplicaciones necesarias
+
 ### Python
- - Versión: 3
- - Documentación: https://docs.python.org/es/3.8.8/
+
+- Versión: 3
+- Documentación: https://docs.python.org/es/3.8.8/
 
 ### NodeJS & npm
- - NodeJS versión: 15.14.0
- - npm versión: 7.7.6
- - Documentación: https://nodejs.org/es/docs/
+
+- NodeJS versión: 15.14.0
+- npm versión: 7.7.6
+- Documentación: https://nodejs.org/es/docs/
+
 ## Uso
+
 ### Requisitos
-| Paquete | Version |
-|:---|:---:|
-| Django| 3.1.7 |
-| asgiref| 3.3.1 |
-| PyMySQL| 1.0.2 |
-| pytz| 2021.1 |
-| sqlparse| 0.4.1 |
-| django-admin-interface| 0.15.6
-| django-colorfield| 0.4.1
-| django-flat-responsive| 2.0
-| django-flat-theme| 1.1.4
-| six| 1.15.0
-| mercadopago | 2.0.6
-| react| 17.0.2
-| react-dom| 17.0.2
-| react-scripts| 4.0.3
+
+| Paquete                | Version |
+| :--------------------- | :-----: |
+| Django                 |  3.1.7  |
+| asgiref                |  3.3.1  |
+| PyMySQL                |  1.0.2  |
+| pytz                   | 2021.1  |
+| sqlparse               |  0.4.1  |
+| django-admin-interface | 0.15.6  |
+| django-colorfield      |  0.4.1  |
+| django-flat-responsive |   2.0   |
+| django-flat-theme      |  1.1.4  |
+| six                    | 1.15.0  |
+| mercadopago            |  2.0.6  |
+
+### Dependencias React
+
+| Paquete       | Version |
+| :------------ | :-----: |
+| react         | 17.0.2  |
+| react-dom     | 17.0.2  |
+| react-scripts |  4.0.3  |
 
 ### Instruccciones
+
 #### Instalacion manual
 
 ```shell
@@ -45,7 +57,8 @@ sudo apt-get install mysql-server-5.7
 sudo apt-get install mysql-client-5.7
 ```
 
-##### 
+#####
+
 ```shell
 
 SUDO mysql
@@ -82,5 +95,3 @@ Cuando se hagan cambios en frontend:
 cd ~/.ProyectoDjango/core/frontend
 npm run build
 ```
-
-
