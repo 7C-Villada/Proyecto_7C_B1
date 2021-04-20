@@ -23,6 +23,7 @@
 | django-flat-responsive| 2.0
 | django-flat-theme| 1.1.4
 | six| 1.15.0
+| mercadopago| 2.0.6
 
 ### Instruccciones
 #### Instalacion manual
