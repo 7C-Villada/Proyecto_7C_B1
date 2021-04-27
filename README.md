@@ -24,6 +24,11 @@
 | django-flat-theme| 1.1.4
 | six| 1.15.0
 | mercadopago| 2.0.6
+| idna | 2.10
+| chardet | 4.0.0
+| certifi | 2020.12.5
+| requests | 2.25.1
+| urllib3 | 1.26.4
 
 ### Instruccciones
 #### Instalacion manual
