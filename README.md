@@ -13,8 +13,8 @@
 
 ### NodeJS & npm
 
-- NodeJS versión: 15.14.0
-- npm versión: 7.7.6
+- NodeJS versión: 14.16.1 LTS
+- npm versión: 6.14.12 LTS
 - Documentación: https://nodejs.org/es/docs/
 
 ## Uso
