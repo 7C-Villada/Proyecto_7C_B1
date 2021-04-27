@@ -89,9 +89,11 @@ cd ~/.ProyectoDjango
 python core/manage.py runserver
 ```
 
-Cuando se hagan cambios en frontend:
+Para instalar dependencias React
 
 ```shell
+git pull origin frontend
 cd ~/.ProyectoDjango/core/frontend
+npm install
 npm run build
 ```
