@@ -24,6 +24,7 @@
 | django-flat-theme| 1.1.4
 | six| 1.15.0
 | mercadopago| 2.0.6
+| Pillow| 8.2.0
 | idna | 2.10
 | chardet | 4.0.0
 | certifi | 2020.12.5
@@ -46,7 +47,7 @@ sudo apt-get install mysql-client-5.7
 ##### 
 ```shell
 
-SUDO mysql
+sudo mysql
 
 CREATE USER 'usuario' IDENTIFIED BY 'root';
 
