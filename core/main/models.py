@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_delete, pre_save
 from django.dispatch import receiver
+from django.contrib.auth.models import User
 
 """ Whenever ANY model is deleted, if it has a file field on it, delete the associated file too"""
 @receiver(post_delete)
@@ -38,7 +39,23 @@ def delete_file_if_unused(model,instance,field,instance_file_field):
     if not other_refs_exist:
         instance_file_field.delete(False)
 
+def get_upload_path(instance, filename):
+    return f'albums/images/{filename}'
+
 # Create your models here.
+
+class ImageAlbum(models.Model):
+    name = models.CharField(max_length=100, null = False)
+
+    def __str__(self):
+        return self.name
+
+class Image(models.Model):
+    image = models.ImageField(upload_to=get_upload_path)
+    album = models.ForeignKey(ImageAlbum, related_name='images', on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f'Imagen {self.id}'
 
 class Actividad(models.Model):
     id = models.AutoField(primary_key=True)
@@ -62,7 +79,6 @@ class Proyecto(Actividad):
     video = models.FileField(upload_to = 'actividades/proyecto/videos', blank = True)
 
     class Meta:
-
         verbose_name = 'Proyecto'
         verbose_name_plural = 'Proyectos'
 
@@ -82,3 +98,30 @@ class Taller(Actividad):
 
     def __str__(self):
         return super().__str__()
+
+class Mensaje(models.Model): # Los mensajes serán parte del Libro de Visitas
+    id = models.AutoField(primary_key = True)
+    publishDate = models.DateField(null = False)
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    content = models.TextField(null = False)
+    approvedMessage = models.BooleanField(default = False) 
+
+    class Meta:
+        verbose_name = 'Mensaje'
+        verbose_name_plural = 'Mensajes'
+
+    def __str__(self):
+        return str('Mensaje N°' + id)
+
+class Historia(models.Model): # Las historias serán parte del Libro de Oro
+    id = models.AutoField(primary_key = True)
+    title = models.CharField(max_length = 75, null = False, default = 'Título de la Historia')
+    content = models.TextField(null = False)
+    imageAlbum =  models.ForeignKey(ImageAlbum, on_delete = models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Historia'
+        verbose_name_plural = 'Historias'
+
+    def __str__(self):
+        return self.title
