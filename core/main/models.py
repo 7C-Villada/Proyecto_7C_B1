@@ -10,7 +10,7 @@ def delete_files_when_row_deleted_from_db(sender, instance, **kwargs):
         if isinstance(field,models.FileField):
             instance_file_field = getattr(instance,field.name)
             delete_file_if_unused(sender,instance,field,instance_file_field)
-            
+
 """ Delete the file if something else get uploaded in its place"""
 @receiver(pre_save)
 def delete_files_when_file_changed(sender,instance, **kwargs):
@@ -45,26 +45,35 @@ def get_upload_path(instance, filename):
 # Create your models here.
 
 class ImageAlbum(models.Model):
-    name = models.CharField(max_length=100, null = False)
+    name = models.CharField(max_length=100, null = False, verbose_name = 'Nombre')
 
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Album de imagenes'
+        verbose_name_plural = 'Albumes de imagenes'
+
 class Image(models.Model):
-    image = models.ImageField(upload_to=get_upload_path)
-    album = models.ForeignKey(ImageAlbum, related_name='images', on_delete=models.CASCADE)
-    
+    image = models.ImageField(upload_to=get_upload_path, verbose_name = 'Imagen')
+    album = models.ForeignKey(ImageAlbum, related_name='images', on_delete=models.CASCADE, verbose_name = 'Album de imagenes')
+
     def __str__(self):
         return f'Imagen {self.id}'
 
+    class Meta:
+        verbose_name = 'Imagen'
+        verbose_name_plural = 'Imagenes'
+
+
 class Actividad(models.Model):
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=100, null = False)
-    description = models.TextField(null = False)
-    startDate = models.DateField(null = False) # -------->  # When wanting to add data, 
-                                                            # you need to import datetime module, i.e:
-                                                            # import datetime
-                                                            # d = datetime.date(1997, 10, 19)
+    title = models.CharField(max_length=100, null = False, verbose_name = 'Titulo')
+    description = models.TextField(null = False, verbose_name = 'Descripcion')
+    startDate = models.DateField(null = False, verbose_name = 'Fecha de inicio')    # -------->  # When wanting to add data, 
+                                                                                    # you need to import datetime module, i.e:
+                                                                                    # import datetime
+                                                                                    # d = datetime.date(1997, 10, 19)
     class Meta:
         abstract = True
         verbose_name = 'Actividad'
@@ -75,8 +84,8 @@ class Actividad(models.Model):
 
 
 class Proyecto(Actividad):
-    image = models.ImageField(upload_to = 'actividades/proyecto/images', blank = True)
-    video = models.FileField(upload_to = 'actividades/proyecto/videos', blank = True)
+    image = models.ImageField(upload_to = 'actividades/proyecto/images', blank = True, verbose_name = 'Imagen')
+    video = models.FileField(upload_to = 'actividades/proyecto/videos', blank = True, verbose_name = 'Video')
 
     class Meta:
         verbose_name = 'Proyecto'
@@ -87,9 +96,9 @@ class Proyecto(Actividad):
 
 
 class Taller(Actividad):
-    image = models.ImageField(upload_to = 'actividades/taller/images', blank = True)
-    video = models.FileField(upload_to = 'actividades/taller/videos', blank = True)
-    proyectos = models.ManyToManyField(Proyecto)
+    image = models.ImageField(upload_to = 'actividades/taller/images', blank = True, verbose_name = 'Imagen')
+    video = models.FileField(upload_to = 'actividades/taller/videos', blank = True, verbose_name = 'Video')
+    proyectos = models.ManyToManyField(Proyecto, verbose_name = 'Proyectos')
 
     class Meta:
 
@@ -101,10 +110,10 @@ class Taller(Actividad):
 
 class Mensaje(models.Model): # Los mensajes serán parte del Libro de Visitas
     id = models.AutoField(primary_key = True)
-    publishDate = models.DateField(null = False)
-    user = models.ForeignKey(User, on_delete = models.CASCADE)
-    content = models.TextField(null = False)
-    approvedMessage = models.BooleanField(default = False) 
+    publishDate = models.DateField(null = False, verbose_name = 'Fecha de publicacion')
+    user = models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = 'Usuario')
+    content = models.TextField(null = False, verbose_name = 'Contenido')
+    approvedMessage = models.BooleanField(default = False, verbose_name = 'Mensaje aprobado') 
 
     class Meta:
         verbose_name = 'Mensaje'
@@ -115,9 +124,9 @@ class Mensaje(models.Model): # Los mensajes serán parte del Libro de Visitas
 
 class Historia(models.Model): # Las historias serán parte del Libro de Oro
     id = models.AutoField(primary_key = True)
-    title = models.CharField(max_length = 75, null = False, default = 'Título de la Historia')
-    content = models.TextField(null = False)
-    imageAlbum =  models.ForeignKey(ImageAlbum, on_delete = models.CASCADE)
+    title = models.CharField(max_length = 75, null = False, default = 'Título de la Historia', verbose_name = 'Titulo')
+    content = models.TextField(null = False, verbose_name = 'Contenido')
+    imageAlbum =  models.ForeignKey(ImageAlbum, on_delete = models.CASCADE, verbose_name = 'Album de imagenes')
 
     class Meta:
         verbose_name = 'Historia'
