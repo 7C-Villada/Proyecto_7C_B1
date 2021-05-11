@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'gmaps',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
@@ -132,3 +133,11 @@ STATIC_ROOT = os.path.join(BASE_DIR , 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# GMaps API
+# https://pypi.org/project/django-gmaps/
+
+GOOGLE_API_KEY = 'AIzaSyDZP2FZDTXNZNYzUX9FnnoxpWaoo5rO7N8'
+
+
