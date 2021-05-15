@@ -21,19 +21,25 @@
 
 ### Requisitos
 
-| Paquete                | Version |
-| :--------------------- | :-----: |
-| Django                 |  3.1.7  |
-| asgiref                |  3.3.1  |
-| PyMySQL                |  1.0.2  |
-| pytz                   | 2021.1  |
-| sqlparse               |  0.4.1  |
-| django-admin-interface | 0.15.6  |
-| django-colorfield      |  0.4.1  |
-| django-flat-responsive |   2.0   |
-| django-flat-theme      |  1.1.4  |
-| six                    | 1.15.0  |
-| mercadopago            |  2.0.6  |
+| Paquete | Version |
+|:---|:---:|
+| Django| 3.1.7 |
+| asgiref| 3.3.1 |
+| PyMySQL| 1.0.2 |
+| pytz| 2021.1 |
+| sqlparse| 0.4.1 |
+| django-admin-interface| 0.15.6
+| django-colorfield| 0.4.1
+| django-flat-responsive| 2.0
+| django-flat-theme| 1.1.4
+| six| 1.15.0
+| mercadopago| 2.0.6
+| Pillow| 8.2.0
+| idna | 2.10
+| chardet | 4.0.0
+| certifi | 2020.12.5
+| requests | 2.25.1
+| urllib3 | 1.26.4
 
 ### Dependencias React
 
@@ -61,7 +67,7 @@ sudo apt-get install mysql-client-5.7
 
 ```shell
 
-SUDO mysql
+sudo mysql
 
 CREATE USER 'usuario' IDENTIFIED BY 'root';
 

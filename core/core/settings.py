@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'gmaps',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
@@ -115,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -133,8 +134,14 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR , 'static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = str(BASE_DIR) + '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
+
+# GMaps API
+# https://pypi.org/project/django-gmaps/
+
+GOOGLE_API_KEY = 'AIzaSyDZP2FZDTXNZNYzUX9FnnoxpWaoo5rO7N8'
