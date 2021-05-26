@@ -110,7 +110,7 @@ class Taller(Actividad):
 
 class Mensaje(models.Model): # Los mensajes serán parte del Libro de Visitas
     id = models.AutoField(primary_key = True)
-    publishDate = models.DateField(null = False, verbose_name = 'Fecha de publicacion')
+    publishDate = models.DateField(auto_now_add=True, null = False, verbose_name = 'Fecha de publicacion')
     user = models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = 'Usuario')
     content = models.TextField(null = False, verbose_name = 'Contenido')
     approvedMessage = models.BooleanField(default = False, verbose_name = 'Mensaje aprobado') 
@@ -120,7 +120,7 @@ class Mensaje(models.Model): # Los mensajes serán parte del Libro de Visitas
         verbose_name_plural = 'Mensajes'
 
     def __str__(self):
-        return str('Mensaje N°' + id)
+        return f'Mensaje N°{self.id}'
 
 class Historia(models.Model): # Las historias serán parte del Libro de Oro
     id = models.AutoField(primary_key = True)

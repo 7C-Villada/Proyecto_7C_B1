@@ -9,10 +9,17 @@ class ImageInline(admin.TabularInline):
 class ImageAlbumAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
 
+@admin.register(Mensaje)
+class MensajeAdmin(admin.ModelAdmin):
+    '''Admin View for Mensaje'''
+
+    list_display = ('__str__','user','publishDate','approvedMessage')
+    list_filter = ('publishDate','user','content','approvedMessage')
+
+
 # Register your models here.
 admin.site.register(Proyecto)
 admin.site.register(Taller)
 admin.site.register(Image)
 admin.site.register(ImageAlbum, ImageAlbumAdmin)
-admin.site.register(Mensaje)
 admin.site.register(Historia)
