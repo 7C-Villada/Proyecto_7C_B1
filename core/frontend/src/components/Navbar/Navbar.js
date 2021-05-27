@@ -1,58 +1,93 @@
-import React from "react";
-import "./Navbar.css";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Dropdown from "./Dropdown";
 import navLogo from "./Logo.png";
-import dropdownArrow from "./vectorpaint.svg";
+import "./Navbar.css";
 
-const Navbar = () => {
+function Navbar() {
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
   return (
-    <div className="navb">
-      <img src={navLogo} className="logo" alt="nav Logo"></img>
-      <nav>
-        <ul className="nav__links">
-          <li>
-            <a href="/">Inicio</a>
+    <>
+      <nav className="navbar">
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <img src={navLogo} className="logo" alt="nav Logo"></img>
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+        </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+              Inicio
+            </Link>
+          </li>
+          <li
+            className="nav-item"
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <Link
+              to="/campo-escuela"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Campo Escuela <i className="fas fa-caret-down" />
+            </Link>
+            {dropdown && <Dropdown />}
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/conocenos"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Conocenos
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/talleres-y-proyectos"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Talleres y Proyectos
+            </Link>
           </li>
           <li>
-            <div className="dropdown">
-              <a href="7" className="dropdown-a">
-                Conocenos
-                <img
-                  src={dropdownArrow}
-                  className="dropdown-arrow"
-                  alt="arrow"
-                ></img>
-              </a>
-              <div className="dropdown__links">
-                <a href="/">Quienes Somos</a>
-                <a href="/">Que hacemos?</a>
-                <a href="/">Como lo hacemos?</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <a href="/">Talleres y Proyectos</a>
-          </li>
-          <li>
-            <div className="dropdown">
-              <a href="7" className="dropdown-a">
-                Campo Escuela
-                <img
-                  src={dropdownArrow}
-                  className="dropdown-arrow"
-                  alt="arrow"
-                ></img>
-              </a>
-              <div className="dropdown__links">
-                <a href="/">Reserva</a>
-                <a href="/">Campamentos</a>
-              </div>
-            </div>
+            <Link
+              to="/colabora"
+              className="nav-links-mobile"
+              onClick={closeMobileMenu}
+            >
+              Colaborá
+            </Link>
           </li>
         </ul>
+        <button className="navButton">Colaborá</button>
       </nav>
-      <button className="navButton">Colaborá</button>
-    </div>
+    </>
   );
-};
+}
 
 export default Navbar;
