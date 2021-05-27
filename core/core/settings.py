@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'solo.apps.SoloAppConfig',
-    'gmaps',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
@@ -135,14 +134,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR , 'static')
 
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
-
-# GMaps API
-# https://pypi.org/project/django-gmaps/
-
-GOOGLE_API_KEY = 'AIzaSyDZP2FZDTXNZNYzUX9FnnoxpWaoo5rO7N8'
