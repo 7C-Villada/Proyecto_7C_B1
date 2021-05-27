@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.signals import post_delete, pre_save
 from django.dispatch import receiver
 from django.contrib.auth.models import User
+from solo.models import SingletonModel
 
 """ Whenever ANY model is deleted, if it has a file field on it, delete the associated file too"""
 @receiver(post_delete)
@@ -134,3 +135,62 @@ class Historia(models.Model): # Las historias serán parte del Libro de Oro
 
     def __str__(self):
         return self.title
+
+
+class Convenio(models.Model):
+
+    organizacion = models.CharField(max_length = 75, null = False, default = 'Nombre de la Organización', verbose_name = 'Organización')
+    localizacion = models.CharField(max_length = 100, null = False, default = 'Ubicación de la Organización', verbose_name = 'Localización')
+    descripcion = models.TextField(null = False, verbose_name = 'Descripción')
+    imagen = models.ImageField(upload_to = 'convenios/images', blank = True, verbose_name = 'Imagen')
+
+    class Meta:
+        verbose_name = 'Convenio'
+        verbose_name_plural = 'Convenios'
+
+    def __str__(self):
+        return f'Convenio {self.organizacion}'
+
+
+class FotoPortada(SingletonModel):
+    imagen = models.ImageField(upload_to = 'portada/', blank = True, verbose_name = 'Portada')
+
+    def __str__(self):
+        return "Portada"
+
+    class Meta:
+        verbose_name = "Portada"
+
+
+class MercadoPagoLink(SingletonModel):
+    link = models.CharField(max_length = 300, null = False, default = 'Link a MercadoPago', verbose_name = 'Link')
+
+    def __str__(self):
+        return "Link MercadoPago"
+
+    class Meta:
+        verbose_name = "Link MercadoPago"
+        verbose_name_plural = 'Link MercadoPago'
+
+
+class MercadoLibreLink(models.Model):
+    link = models.CharField(max_length = 300, null = False, default = 'Link a MercadoPago', verbose_name = 'Link')
+    nombre = models.CharField(max_length = 75, null = False, default = 'Nombre del Perfil de MercadoLibre', verbose_name = 'Nombre')
+    descripcion = models.TextField(null = False, verbose_name = 'Descripción')
+
+    class Meta:
+        verbose_name = 'Link MercadoLibre'
+        verbose_name_plural = 'Links MercadoLibre'
+
+    def __str__(self):
+        return self.nombre
+
+class FormaParteLink(SingletonModel):
+    link = models.CharField(max_length = 300, null = False, default = 'Link a GoogleForm', verbose_name = 'Link')
+
+    def __str__(self):
+        return "Link FormaParte"
+
+    class Meta:
+        verbose_name = "Link FormaParte"
+        verbose_name_plural = 'Link FormaParte'
