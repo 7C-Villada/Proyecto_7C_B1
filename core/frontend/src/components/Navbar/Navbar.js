@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
+import Button from "../UI/Button";
 import navLogo from "./Logo.png";
 import "./Navbar.css";
 
@@ -84,7 +85,7 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <button className="navButton">Colaborá</button>
+        <Button />
       </nav>
     </>
   );

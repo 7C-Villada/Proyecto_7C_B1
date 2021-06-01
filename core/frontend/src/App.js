@@ -5,6 +5,13 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Colabora from "./components/Pages/Colabora";
+import CampoEscuela from "./components/Pages/CampoEscuela";
+import Reserva from "./components/Pages/Reserva";
+import Campamentos from "./components/Pages/Campamentos";
+import Conocenos from "./components/Pages/Conocenos";
+import TalleresProyectos from "./components/Pages/TalleresProyectos";
+import NotFound from "./components/Pages/NotFound";
 
 function App() {
   return (
@@ -12,12 +19,15 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/prueba">
-            <Prueba />
-          </Route>
-          <Route path="/">
-            <LandingPage />
-          </Route>
+          <Route path="/talleres-y-proyectos" component={TalleresProyectos} />
+          <Route path="/conocenos" component={Conocenos} />
+          <Route path="/campamentos" component={Campamentos} />
+          <Route path="/reserva" component={Reserva} />
+          <Route path="/campo-escuela" component={CampoEscuela} />
+          <Route path="/colabora" component={Colabora} />
+          <Route path="/prueba" component={Prueba} />
+          <Route path="/" component={LandingPage} exact />
+          <Route path="*" component={NotFound} />
         </Switch>
       </div>
     </Router>
