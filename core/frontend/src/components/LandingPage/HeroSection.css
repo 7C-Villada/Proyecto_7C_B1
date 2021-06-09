@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
 .hero-container {
-  overflow: hidden;
+  /* overflow: hidden; */
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("images/img-home.jpg") center center/cover no-repeat;
   /* background-attachment: fixed; */
@@ -60,11 +60,17 @@
   .forma-parte__btn,
   .title-cream,
   .title-green {
-    position: absolute;
+    /* position: absolute; */
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
+    top: 10;
+    /* text-align: center; */
+    display: inline-block;
+  }
+
+  .hero-container {
     text-align: center;
   }
 }

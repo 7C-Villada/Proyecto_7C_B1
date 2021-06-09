@@ -1,6 +1,7 @@
 import React from "react";
 import "./HeroSection.css";
-
+import Carousel from "./Carousel";
+import { CarouselData } from "./CarouselData";
 import { FaHandsHelping } from "react-icons/fa";
 
 const HeroSection = () => {
@@ -11,6 +12,7 @@ const HeroSection = () => {
       <button className="forma-parte__btn">
         Formá Parte <FaHandsHelping />
       </button>
+      <Carousel slides={CarouselData} className="carousel" />
     </div>
   );
 };

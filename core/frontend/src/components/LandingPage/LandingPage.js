@@ -1,13 +1,12 @@
 import React from "react";
 import HeroSection from "./HeroSection";
-import Carousel from "./Carousel";
-import { CarouselData } from "./CarouselData";
+import InfoSection from "./InfoSection";
 
 const LandingPage = () => {
   return (
     <div>
       <HeroSection />
-      <Carousel slides={CarouselData} />
+      <InfoSection />
     </div>
   );
 };

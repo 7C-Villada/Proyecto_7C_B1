@@ -6,12 +6,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
 }
 
 .image {
   width: 700px;
   height: 40vh;
+  border-radius: 15px;
   object-fit: cover;
   opacity: 0.8;
 }
