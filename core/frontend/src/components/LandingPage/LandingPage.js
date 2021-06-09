@@ -1,9 +1,13 @@
 import React from "react";
+import HeroSection from "./HeroSection";
+import Carousel from "./Carousel";
+import { CarouselData } from "./CarouselData";
 
 const LandingPage = () => {
   return (
     <div>
-      <h1>Landing Page</h1>
+      <HeroSection />
+      <Carousel slides={CarouselData} />
     </div>
   );
 };

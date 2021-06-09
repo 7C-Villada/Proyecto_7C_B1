@@ -1,0 +1,70 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.hero-container {
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("images/img-home.jpg") center center/cover no-repeat;
+  /* background-attachment: fixed; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: insert 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+.title-green {
+  padding: 20px;
+  position: absolute;
+  left: 7%;
+  top: 35%;
+  font-family: "Kaushan Script", cursive;
+  color: #49a651;
+  text-shadow: 2px 2px #000;
+  font-size: 10rem;
+}
+.title-cream {
+  padding: 20px;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  font-family: "Kaushan Script", cursive;
+  color: #f8f0bb;
+  text-shadow: 4px 4px #000;
+  font-size: 10rem;
+}
+
+.forma-parte__btn {
+  position: absolute;
+  top: 72%;
+  left: 6%;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 5px 30px;
+  margin-top: 30px;
+  border-radius: 5rem;
+  background-color: #49a651;
+  border: 6px solid #49a651;
+  color: #f8f0bb;
+  transition: all 0.1s ease-in-out 0s;
+}
+
+.forma-parte__btn:hover {
+  background: none;
+  color: #49a651;
+}
+
+@media only screen and (max-width: 1500px) {
+  .forma-parte__btn,
+  .title-cream,
+  .title-green {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+}
