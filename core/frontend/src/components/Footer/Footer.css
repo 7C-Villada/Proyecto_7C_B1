@@ -1,0 +1,41 @@
+.footer-container {
+  position: relative;
+  background: #3e2307;
+  height: 35vh;
+}
+
+.footer-list {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.footer-list li {
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 200ms ease-in;
+}
+
+.footer-title {
+  text-align: center;
+  color: #beba9ad2;
+}
+
+.footer-info {
+  display: inline-block;
+  color: #f8f0bb;
+}
+
+.footer-icon {
+  vertical-align: top;
+  font-size: 2rem;
+  color: #f8f0bb;
+}
+
+.footer-list li:hover {
+  transform: scale(1.02);
+}
