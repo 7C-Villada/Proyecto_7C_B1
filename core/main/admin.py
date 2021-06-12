@@ -3,7 +3,7 @@ from .models import *
 
 class ImageInline(admin.TabularInline):
     model = Image
-    fields = ['image']
+    fields = ['imagen']
     extra = 1
 
 class ImageAlbumAdmin(admin.ModelAdmin):

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'solo.apps.SoloAppConfig',
     'cloudinary',
     'cloudinary_storage',
+    'rest_framework',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'

@@ -9,11 +9,7 @@ from django.db.models.signals import pre_delete, post_save
 from django.dispatch import receiver
 from model_utils import FieldTracker
 
-""" Whenever ANY model is deleted, if it has a file field on it, delete the associated file too"""
-
-""" Only delete the file if no other instances of that model are using it"""    
-# Create your models here.
-
+#Serialized
 class ImageAlbum(models.Model):
     name = models.CharField(max_length=100, null = False, verbose_name = 'Nombre')
 
@@ -24,6 +20,7 @@ class ImageAlbum(models.Model):
         verbose_name = 'Album de imagenes'
         verbose_name_plural = 'Albumes de imagenes'
 
+#Serialized
 class Image(models.Model):
     imagen = cloudinary.models.CloudinaryField('image', folder='media/')
     album = models.ForeignKey(ImageAlbum, related_name='images', on_delete=models.CASCADE, verbose_name = 'Album de imagenes')
@@ -38,7 +35,6 @@ class Image(models.Model):
 
 
 class Actividad(models.Model):
-    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, null = False, verbose_name = 'Titulo')
     description = models.TextField(null = False, verbose_name = 'Descripcion')
     startDate = models.DateField(null = False, verbose_name = 'Fecha de inicio')    # -------->  # When wanting to add data, 
@@ -54,6 +50,7 @@ class Actividad(models.Model):
         return self.title
 
 
+#Serialized
 class Proyecto(Actividad):
     imagen = cloudinary.models.CloudinaryField('image', folder='media/')
     tracker = FieldTracker()
@@ -66,9 +63,10 @@ class Proyecto(Actividad):
         return super().__str__()
 
 
+#Serialized
 class Taller(Actividad):
     imagen = cloudinary.models.CloudinaryField('image', folder='media/')
-    proyectos = models.ManyToManyField(Proyecto, verbose_name = 'Proyectos')
+    proyectos = models.ManyToManyField(Proyecto, related_name='talleres', verbose_name = 'Proyectos')
     tracker = FieldTracker()
 
     class Meta:
@@ -93,8 +91,9 @@ class Mensaje(models.Model): # Los mensajes serán parte del Libro de Visitas
     def __str__(self):
         return f'Mensaje N°{self.id}'
 
+
+#Serialized
 class Historia(models.Model): # Las historias serán parte del Libro de Oro
-    id = models.AutoField(primary_key = True)
     title = models.CharField(max_length = 75, null = False, default = 'Título de la Historia', verbose_name = 'Titulo')
     content = models.TextField(null = False, verbose_name = 'Contenido')
     imageAlbum =  models.ForeignKey(ImageAlbum, on_delete = models.CASCADE, verbose_name = 'Album de imagenes')
@@ -107,6 +106,7 @@ class Historia(models.Model): # Las historias serán parte del Libro de Oro
         return self.title
 
 
+#Serialized
 class Convenio(models.Model):
 
     organizacion = models.CharField(max_length = 75, null = False, default = 'Nombre de la Organización', verbose_name = 'Organización')
@@ -123,6 +123,7 @@ class Convenio(models.Model):
         return f'Convenio {self.organizacion}'
 
 
+#Serialized
 class FotoPortada(SingletonModel):
     imagen = cloudinary.models.CloudinaryField('image', folder='media/')
     tracker = FieldTracker()
@@ -134,6 +135,7 @@ class FotoPortada(SingletonModel):
         verbose_name = "Portada"
 
 
+#Serialized
 class MercadoPagoLink(SingletonModel):
     link = models.CharField(max_length = 300, null = False, default = 'Link a MercadoPago', verbose_name = 'Link')
 
@@ -145,8 +147,9 @@ class MercadoPagoLink(SingletonModel):
         verbose_name_plural = 'Link MercadoPago'
 
 
+#Serialized
 class MercadoLibreLink(models.Model):
-    link = models.CharField(max_length = 300, null = False, default = 'Link a MercadoPago', verbose_name = 'Link')
+    link = models.CharField(max_length = 300, null = False, default = 'Link a MercadoLibre', verbose_name = 'Link')
     nombre = models.CharField(max_length = 75, null = False, default = 'Nombre del Perfil de MercadoLibre', verbose_name = 'Nombre')
     descripcion = models.TextField(null = False, verbose_name = 'Descripción')
 
@@ -157,6 +160,7 @@ class MercadoLibreLink(models.Model):
     def __str__(self):
         return self.nombre
 
+#Serialized
 class FormaParteLink(SingletonModel):
     link = models.CharField(max_length = 300, null = False, default = 'Link a GoogleForm', verbose_name = 'Link')
 
@@ -175,7 +179,8 @@ def pre_delete_Proyecto(sender, instance, **kwargs):
 def post_save_Proyecto(sender, instance, created, **kwargs):
     if not created:
         imagenPrevia = instance.tracker.previous('imagen')
-        cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
+        if imagenPrevia.public_id != instance.imagen.public_id:
+            cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
 
 @receiver(pre_delete, sender=Taller)
 def pre_delete_Taller(sender, instance, **kwargs):
@@ -185,7 +190,8 @@ def pre_delete_Taller(sender, instance, **kwargs):
 def post_save_Taller(sender, instance, created, **kwargs):
     if not created:
         imagenPrevia = instance.tracker.previous('imagen')
-        cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
+        if imagenPrevia.public_id != instance.imagen.public_id:
+            cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
 
 @receiver(pre_delete, sender=Image)
 def pre_delete_Image(sender, instance, **kwargs):
@@ -195,7 +201,8 @@ def pre_delete_Image(sender, instance, **kwargs):
 def post_save_Image(sender, instance, created, **kwargs):
     if not created:
         imagenPrevia = instance.tracker.previous('imagen')
-        cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
+        if imagenPrevia.public_id != instance.imagen.public_id:
+            cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
 
 @receiver(pre_delete, sender=Convenio)
 def pre_delete_Convenio(sender, instance, **kwargs):
@@ -205,7 +212,8 @@ def pre_delete_Convenio(sender, instance, **kwargs):
 def post_save_Convenio(sender, instance, created, **kwargs):
     if not created:
         imagenPrevia = instance.tracker.previous('imagen')
-        cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
+        if imagenPrevia.public_id != instance.imagen.public_id:
+            cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
 
 @receiver(pre_delete, sender=FotoPortada)
 def pre_delete_FotoPortada(sender, instance, **kwargs):
@@ -215,4 +223,5 @@ def pre_delete_FotoPortada(sender, instance, **kwargs):
 def post_save_FotoPortada(sender, instance, created, **kwargs):
     if not created:
         imagenPrevia = instance.tracker.previous('imagen')
-        cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
+        if imagenPrevia.public_id != instance.imagen.public_id:
+            cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
