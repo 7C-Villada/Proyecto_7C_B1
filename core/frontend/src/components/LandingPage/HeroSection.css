@@ -2,17 +2,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
 .hero-container {
-  /* overflow: hidden; */
+  overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("images/img-home.jpg") center center/cover no-repeat;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: insert 0 0 0 1000px rgba(0, 0, 0, 0.2);
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .title-green {
@@ -60,17 +60,35 @@
   .forma-parte__btn,
   .title-cream,
   .title-green {
-    /* position: absolute; */
+    position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 10;
+    top: 100;
     /* text-align: center; */
     display: inline-block;
+    transform: translate(0px, -250px);
   }
 
   .hero-container {
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .title-cream,
+  .title-green {
+    font-size: 7rem;
+  }
+
+  .title-cream {
+    transform: translate(0px, -300px);
+  }
+
+  .forma-parte__btn {
+    padding: 2px 15px;
+    font-size: 2rem;
+    transform: translate(0px, -300px);
   }
 }

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
 .card {
+  min-width: 0;
   background: #fff;
   position: relative;
   height: 60vh;
