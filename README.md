@@ -101,7 +101,7 @@
 | react-dom        | 17.0.2  |
 | react-scripts    |  4.0.3  |
 | react-router-dom |  5.2.0  |
-| fontawesome      | 5.15.13 |
+| react-icons      |  4.2.0  |
 
 ### Instruccciones
 
@@ -115,6 +115,15 @@ python core/manage.py collectstatic
 
 sudo apt-get install mysql-server-5.7
 sudo apt-get install mysql-client-5.7
+```
+
+Para instalar dependencias React:
+
+```shell
+git pull origin frontend
+cd ~/.ProyectoDjango/core/frontend
+npm install
+npm run build
 ```
 
 #####
@@ -149,16 +158,7 @@ cd ~/.ProyectoDjango
 python core/manage.py runserver
 ```
 
-Para instalar dependencias React:
-
-```shell
-git pull origin frontend
-cd ~/.ProyectoDjango/core/frontend
-npm install
-npm run build
-```
-
-Para iniciar el entorno de desarrollo:
+Para iniciar el entorno de desarrollo frontend:
 
 ```shell
 npm start
