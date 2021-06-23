@@ -64,7 +64,7 @@ db.sqlite3
 db.sqlite3-journal
 **/migrations/**
 **/media/**
-#.env
+.env
 
 # Flask stuff:
 instance/
@@ -107,7 +107,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-#.env
+.env
 .venv
 env/
 venv/
@@ -132,3 +132,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+core/.env
