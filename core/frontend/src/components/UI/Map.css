@@ -1,0 +1,15 @@
+.map-container {
+  border: 2px solid black;
+  border-radius: 15px;
+  height: 90%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f0bb;
+}
+
+.map-container h1 {
+  color: #0fc11f;
+}

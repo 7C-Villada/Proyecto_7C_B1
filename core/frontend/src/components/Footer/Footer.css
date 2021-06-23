@@ -1,41 +1,36 @@
-.footer-container {
-  position: relative;
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.main-footer {  
+  text-align: center;
+  color: #f8f0bb;;
   background: #3e2307;
-  height: 35vh;
-}
-
-.footer-list {
-  position: absolute;
+  padding-top: 3em;
   bottom: 0;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
+  width: 100%;
 }
 
-.footer-list li {
-  cursor: pointer;
-  margin: 10px;
-  transition: transform 200ms ease-in;
+.title {
+  font-family: "Kaushan Script", cursive;
+  font-size: 29px;
 }
 
-.footer-title {
-  text-align: center;
-  color: #beba9ad2;
+.redessoc {
+  float: center;
 }
 
-.footer-info {
-  display: inline-block;
+.redessoc a {
   color: #f8f0bb;
+  text-decoration: none;
 }
 
-.footer-icon {
-  vertical-align: top;
-  font-size: 2rem;
-  color: #f8f0bb;
-}
-
-.footer-list li:hover {
-  transform: scale(1.02);
+@media screen and (max-width: 768px) {
+  
+  .redessoc {
+    min-width: 400px;
+    float: center;
+  }
+  
+  .pie-footer {
+    font-size: 12px;
+  }
 }

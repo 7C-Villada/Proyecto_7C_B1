@@ -1,0 +1,11 @@
+.calendar-container {
+  border: 2px solid black;
+  border-radius: 15px;
+  background: #f8f0bb;
+  color: #0fc11f;
+  margin: 250px 0;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

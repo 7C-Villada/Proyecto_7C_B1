@@ -25,6 +25,7 @@
   text-shadow: 2px 2px #000;
   font-size: 10rem;
 }
+
 .title-cream {
   padding: 20px;
   position: absolute;
@@ -56,7 +57,7 @@
   color: #49a651;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1300px) {
   .forma-parte__btn,
   .title-cream,
   .title-green {
