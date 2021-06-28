@@ -1,0 +1,23 @@
+
+{% extends "admin/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}{{ title }} | {% trans "AprenderHaciendo" %}{% endblock %}
+{% block extrastyle %}
+     <link rel="stylesheet" type="text/css" href="{% static 'admin/admin_color.css' %}"/>
+{% endblock %}
+
+{% block branding %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<h1 id="site-name" >
+    <a href="{% url 'admin:index' %}">
+        <img style="float: left; margin-right: 30px; padding: 5% 0;" src="{% static 'admin/Logo.png' %}" height="40px" />
+    </a>
+</h1>
+<h1 id="site-name" style="font-weight: 400; font-family: 'Montserrat', sans-serif; padding: 3.3% 0;">{% trans 'Fundación Aprender Haciendo' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
