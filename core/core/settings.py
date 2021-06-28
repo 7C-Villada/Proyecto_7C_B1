@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
+import cloudinary
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6d))p05w#mq2l3k$&^%74ycl)%eq8mc_=v=#_g0y7q@v176+am'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -41,7 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'gmaps',
+    'solo.apps.SoloAppConfig',
+    'cloudinary',
+    'cloudinary_storage',
+    'rest_framework',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
@@ -83,15 +89,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'proyecto',
-            'USER': 'usuario',
-            'PASSWORD': 'root',
-            'HOST': 'localhost',
-            'PORT': '3306',
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
 
 
 # Password validation
@@ -134,14 +136,16 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR , 'static')
 
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
 
-# GMaps API
-# https://pypi.org/project/django-gmaps/
+cloudinary.config(
+    cloud_name = config('cloud_name') ,
+    api_key = config('api_key') ,
+    api_secret = config('api_secret') ,
+)
 
-GOOGLE_API_KEY = 'AIzaSyDZP2FZDTXNZNYzUX9FnnoxpWaoo5rO7N8'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

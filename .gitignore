@@ -133,3 +133,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 core/frontend/package-lock.json
+
+core/.env
