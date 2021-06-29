@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-admin {
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 500;
+}
+
+.logo {
+    margin-right: 10px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
 #branding h1, #branding h1 a:link, #branding h1 a:visited {
     color: #f0f8bb;
 }
