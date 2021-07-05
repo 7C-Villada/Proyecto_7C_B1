@@ -46,8 +46,23 @@ def apiOverview(request):
 @api_view(['GET'])
 def listaTaller(request):
 
+    """
+    ---
+    ### **Función**
+    Retorna una lista de todos los talleres sin especificar la relación con los *Proyectos*  
+    Cabe aclarar que al path retornado, en el campo imagen, se le debe concatenar al principio el siguiente link:  
+    *https://res.cloudinary.com/aprenderhaciendo/*  
+    Por ejemplo: *https://res.cloudinary.com/aprenderhaciendo/image/upload/v1623704292/media/c4fp8ofp8njmiich4wvn.jpg*
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
     talleres = Taller.objects.all()
-    serializer = TallerSerializer(talleres, many=True)
+    serializer = TallerSerializerList(talleres, many=True)
 
     if not talleres:
         return no_content()
@@ -58,8 +73,24 @@ def listaTaller(request):
 @api_view(['GET'])
 def listaProyecto(request):
 
+    """
+    ---
+    ### **Función**
+    Retorna una lista de todos los proyectos sin especificar la relación con los *Talleres*  
+    Cabe aclarar que al path retornado, en el campo imagen, se le debe concatenar al principio el siguiente link:  
+    *https://res.cloudinary.com/aprenderhaciendo/*  
+    Por ejemplo: *https://res.cloudinary.com/aprenderhaciendo/image/upload/v1623704292/media/c4fp8ofp8njmiich4wvn.jpg*
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
+
     proyectos = Proyecto.objects.all()
-    serializer = ProyectoSerializer(proyectos, many=True)
+    serializer = ProyectoSerializerList(proyectos, many=True)
 
     if not proyectos:
         return no_content()
@@ -69,6 +100,23 @@ def listaProyecto(request):
 
 @api_view(['GET'])
 def singleFotoPortada(request):
+
+    """
+    ---
+    ### **Función**
+    Retorna path a la imagen la cual deberá ser utilizada como portada en la hero section.  
+    Cabe aclarar que al path retornado se le debe concatenar al principio el siguiente link:  
+    *https://res.cloudinary.com/aprenderhaciendo/*  
+    Por ejemplo: *https://res.cloudinary.com/aprenderhaciendo/image/upload/v1623704292/media/c4fp8ofp8njmiich4wvn.jpg*
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
+
     try:
         fp = FotoPortada.objects.get()
         serializer = FotoPortadaSerializer(fp, many=False)
@@ -79,6 +127,22 @@ def singleFotoPortada(request):
 
 @api_view(['GET'])
 def listaConvenio(request):
+
+    """
+    ---
+    ### **Función**
+    Retorna una lista de todos los convenios  
+    Cabe aclarar que al path retornado, en el campo imagen, se le debe concatenar al principio el siguiente link:  
+    *https://res.cloudinary.com/aprenderhaciendo/*  
+    Por ejemplo: *https://res.cloudinary.com/aprenderhaciendo/image/upload/v1623704292/media/c4fp8ofp8njmiich4wvn.jpg*
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
 
     convenios = Convenio.objects.all()
     serializer = ConvenioSerializer(convenios, many=True)
@@ -91,6 +155,20 @@ def listaConvenio(request):
 
 @api_view(['GET'])
 def singleFormaParteLink(request):
+
+    """
+    ---
+    ### **Función**
+    Retorna link a un formulario de google  
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
+    
     try:
         fpl = FormaParteLink.objects.get()
         serializer = FormaParteLinkSerializer(fpl, many=False)
@@ -101,6 +179,19 @@ def singleFormaParteLink(request):
 
 @api_view(['GET'])
 def listaMercadoLibreLink(request):
+
+    """
+    ---
+    ### **Función**
+    Retorna una lista de todos los links a los perfiles de Mercado Libre  
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
 
     linksML = MercadoLibreLink.objects.all()
     serializer = MercadoLibreLinkSerializer(linksML, many=True)
@@ -113,6 +204,20 @@ def listaMercadoLibreLink(request):
 
 @api_view(['GET'])
 def singleMercadoPagoLink(request):
+
+    """
+    ---
+    ### **Función**
+    Retorna un link directo a Mercado Pago  
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
+
     try:
         mpl = MercadoPagoLink.objects.get()
         serializer = MercadoPagoLinkSerializer(mpl, many=False)
@@ -124,8 +229,21 @@ def singleMercadoPagoLink(request):
 @api_view(['GET'])
 def listaHistoria(request):
 
+    """
+    ---
+    ### **Función**
+    Retorna una lista de todas las historias sin especificar la relación con el *Álbum de Imágenes*  
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
+
     historias = Historia.objects.all()
-    serializer = HistoriaSerializer(historias, many=True)
+    serializer = HistoriaSerializerList(historias, many=True)
 
     if not historias:
         return no_content()
@@ -136,8 +254,21 @@ def listaHistoria(request):
 @api_view(['GET'])
 def listaImageAlbum(request):
 
+    """
+    ---
+    ### **Función**
+    Retorna una lista de todos los Álbumes sin especificar la relación con las *Fotos/Images*  
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
+
     imageAlbum = ImageAlbum.objects.all()
-    serializer = ImageAlbumSerializer(imageAlbum, many=True)
+    serializer = ImageAlbumSerializerList(imageAlbum, many=True)
 
     if not imageAlbum:
         return no_content()
@@ -147,6 +278,22 @@ def listaImageAlbum(request):
 
 @api_view(['GET'])
 def detalleConvenio(request, pk):
+
+    """
+    ---
+    ### **Función**
+    Retorna un Convenio  
+    Cabe aclarar que al path retornado, en el campo imagen, se le debe concatenar al principio el siguiente link:  
+    *https://res.cloudinary.com/aprenderhaciendo/*  
+    Por ejemplo: *https://res.cloudinary.com/aprenderhaciendo/image/upload/v1623704292/media/c4fp8ofp8njmiich4wvn.jpg*
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 404: No encontrado
+    - 500: Error interno del servidor
+    ---
+    """
 
     try:
         convenio = Convenio.objects.get(id=pk)
@@ -159,6 +306,19 @@ def detalleConvenio(request, pk):
 @api_view(['GET'])
 def detalleMercadoLibreLink(request, pk):
 
+    """
+    ---
+    ### **Función**
+    Retorna un link hacia un perfil de Mercado Libre  
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 404: No encontrado
+    - 500: Error interno del servidor
+    ---
+    """
+
     try:
         ml = MercadoLibreLink.objects.get(id=pk)
         serializer = MercadoLibreLinkSerializer(ml, many=False)
@@ -170,9 +330,26 @@ def detalleMercadoLibreLink(request, pk):
 @api_view(['GET'])
 def detalleProyecto(request, pk):
 
+    """
+    ---
+    ### **Función**
+    Retorna un solo proyecto según el id especificado.  
+    Se especifican también los *Talleres* asociados al proyecto en cuestión  
+    Cabe aclarar que al path retornado, en el campo imagen, se le debe concatenar al principio el siguiente link:  
+    *https://res.cloudinary.com/aprenderhaciendo/*  
+    Por ejemplo: *https://res.cloudinary.com/aprenderhaciendo/image/upload/v1623704292/media/c4fp8ofp8njmiich4wvn.jpg*
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 404: No encontrado
+    - 500: Error interno del servidor
+    ---
+    """
+
     try:
         proyecto = Proyecto.objects.get(id=pk)
-        serializer = ProyectoSerializer(proyecto, many=False)
+        serializer = ProyectoSerializerDetail(proyecto, many=False)
         return Response(serializer.data)
     except ObjectDoesNotExist:
         return not_found()
@@ -180,9 +357,26 @@ def detalleProyecto(request, pk):
 @api_view(['GET'])
 def detalleTaller(request, pk):
 
+    """
+    ---
+    ### **Función**
+    Retorna un solo taller según el id especificado.  
+    Se especifican también los *Proyectos* asociados al taller en cuestión  
+    Cabe aclarar que al path retornado, en el campo imagen, se le debe concatenar al principio el siguiente link:  
+    *https://res.cloudinary.com/aprenderhaciendo/*  
+    Por ejemplo: *https://res.cloudinary.com/aprenderhaciendo/image/upload/v1623704292/media/c4fp8ofp8njmiich4wvn.jpg*
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 404: No encontrado
+    - 500: Error interno del servidor
+    ---
+    """
+
     try:
         taller = Taller.objects.get(id=pk)
-        serializer = TallerSerializer(taller, many=False)
+        serializer = TallerSerializerDetail(taller, many=False)
         return Response(serializer.data)
     except ObjectDoesNotExist:
         return not_found()
@@ -191,9 +385,23 @@ def detalleTaller(request, pk):
 @api_view(['GET'])
 def detalleHistoria(request, pk):
 
+    """
+    ---
+    ### **Función**
+    Retorna una sola historia según el id especificado.  
+    Se especifica también el id del *Álbum de Imágenes* asociado a la historia en cuestión  
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 404: No encontrado
+    - 500: Error interno del servidor
+    ---
+    """
+
     try:
         historia = Historia.objects.get(id=pk)
-        serializer = HistoriaSerializer(historia, many=False)
+        serializer = HistoriaSerializerDetail(historia, many=False)
         return Response(serializer.data)
     except ObjectDoesNotExist:
         return not_found()
@@ -202,9 +410,26 @@ def detalleHistoria(request, pk):
 @api_view(['GET'])
 def detalleImageAlbum(request, pk):
 
+    """
+    ---
+    ### **Función**
+    Retorna un solo álbum según el id especificado.  
+    Se especifican también las *Fotos/Images* asociadas al álbum en cuestión  
+    Cabe aclarar que al path retornado, en el campo imagen, se le debe concatenar al principio el siguiente link:  
+    *https://res.cloudinary.com/aprenderhaciendo/*  
+    Por ejemplo: *https://res.cloudinary.com/aprenderhaciendo/image/upload/v1623704292/media/c4fp8ofp8njmiich4wvn.jpg*
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 404: No encontrado
+    - 500: Error interno del servidor
+    ---
+    """
+
     try:
         ia = ImageAlbum.objects.get(id=pk)
-        serializer = ImageAlbumSerializer(ia, many=False)
+        serializer = ImageAlbumSerializerDetail(ia, many=False)
         return Response(serializer.data)
     except ObjectDoesNotExist:
         return not_found()

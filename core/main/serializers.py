@@ -31,12 +31,18 @@ class MercadoPagoLinkSerializer(serializers.ModelSerializer):
         model = MercadoPagoLink
         fields = '__all__'
 
-class TallerSerializer(serializers.ModelSerializer):
+class TallerSerializerDetail(serializers.ModelSerializer):
 
     class Meta:
         model = Taller
         fields = '__all__'
         depth = 1
+
+class TallerSerializerList(serializers.ModelSerializer):
+
+    class Meta:
+        model = Taller
+        exclude = ['proyectos']
 
 class TallerFromProyectoSerializer(serializers.ModelSerializer):
 
@@ -44,7 +50,7 @@ class TallerFromProyectoSerializer(serializers.ModelSerializer):
         model = Taller
         fields = ['id','title','description','startDate','imagen']
 
-class ProyectoSerializer(serializers.ModelSerializer):
+class ProyectoSerializerDetail(serializers.ModelSerializer):
 
     talleres = TallerFromProyectoSerializer(many=True)
 
@@ -52,16 +58,26 @@ class ProyectoSerializer(serializers.ModelSerializer):
         model = Proyecto
         fields = ['id','title','description','startDate','imagen','talleres']
 
+class ProyectoSerializerList(serializers.ModelSerializer):
 
+    class Meta:
+        model = Proyecto
+        fields = '__all__'
 
 class ImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Image
+        exclude = ['album']
+
+
+class ImageAlbumSerializerList(serializers.ModelSerializer):
+
+    class Meta:
+        model = ImageAlbum
         fields = '__all__'
 
-
-class ImageAlbumSerializer(serializers.ModelSerializer):
+class ImageAlbumSerializerDetail(serializers.ModelSerializer):
 
     images = ImageSerializer(many=True)
 
@@ -69,12 +85,15 @@ class ImageAlbumSerializer(serializers.ModelSerializer):
         model = ImageAlbum
         fields = ['id','name','images']
 
-class HistoriaSerializer(serializers.ModelSerializer):
-
-    imageAlbum = ImageAlbumSerializer()
+class HistoriaSerializerDetail(serializers.ModelSerializer):
 
     class Meta:
         model = Historia
-        fields = ['id','title','content','imageAlbum']
+        fields = '__all__'
 
+class HistoriaSerializerList(serializers.ModelSerializer):
+
+    class Meta:
+        model = Historia
+        exclude = ['imageAlbum']
 
