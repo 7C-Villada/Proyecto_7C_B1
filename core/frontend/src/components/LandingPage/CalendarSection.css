@@ -2,7 +2,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(3rem, 25rem));
-  gap: 40rem;
+  gap: 20rem;
   justify-content: center;
 }
 
