@@ -10,7 +10,6 @@ urlpatterns = [
 
     path('api/taller/', views.listaTaller, name='lista-taller'),
     path('api/proyecto/', views.listaProyecto, name='lista-proyecto'),
-    path('api/foto-portada/', views.singleFotoPortada, name='foto-portada'),
     path('api/convenio/', views.listaConvenio, name='convenio'),
     path('api/forma-parte/', views.singleFormaParteLink, name='forma-parte'),
     path('api/mercado-pago/', views.singleMercadoPagoLink, name='mercado-pago'),

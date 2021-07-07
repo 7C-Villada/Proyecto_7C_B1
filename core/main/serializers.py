@@ -1,12 +1,6 @@
 from rest_framework import serializers
 from .models import *
 
-class FotoPortadaSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = FotoPortada
-        fields = '__all__'
-
 class ConvenioSerializer(serializers.ModelSerializer):
 
     class Meta:

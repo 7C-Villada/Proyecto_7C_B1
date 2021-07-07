@@ -25,7 +25,6 @@ def apiOverview(request):
     api_urls = {
         'Lista talleres':'api/taller/',
         'Lista proyectos':'api/proyecto/',
-        'Lista foto de portada':'api/foto-portada/',
         'Lista convenios':'api/convenio/',
         'Lista link forma parte':'api/forma-parte/',
         'Lista link MP':'api/mercado-pago/',
@@ -96,33 +95,6 @@ def listaProyecto(request):
         return no_content()
 
     return Response(serializer.data)
-
-
-@api_view(['GET'])
-def singleFotoPortada(request):
-
-    """
-    ---
-    ### **Función**
-    Retorna path a la imagen la cual deberá ser utilizada como portada en la hero section.  
-    Cabe aclarar que al path retornado se le debe concatenar al principio el siguiente link:  
-    *https://res.cloudinary.com/aprenderhaciendo/*  
-    Por ejemplo: *https://res.cloudinary.com/aprenderhaciendo/image/upload/v1623704292/media/c4fp8ofp8njmiich4wvn.jpg*
-
-    ---
-    ### **Posibles códigos HTTP**
-    - 200: OK
-    - 204: No hay contenido
-    - 500: Error interno del servidor
-    ---
-    """
-
-    try:
-        fp = FotoPortada.objects.get()
-        serializer = FotoPortadaSerializer(fp, many=False)
-        return Response(serializer.data)
-    except ObjectDoesNotExist:
-        return no_content()
 
 
 @api_view(['GET'])
