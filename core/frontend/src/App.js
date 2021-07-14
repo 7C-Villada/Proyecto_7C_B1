@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Prueba from "./components/Prueba/Prueba";
-import LandingPage from "./components/LandingPage/LandingPage";
+import Home from "./components/Pages";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -26,9 +27,10 @@ function App() {
           <Route path="/campo-escuela" component={CampoEscuela} />
           <Route path="/colabora" component={Colabora} />
           <Route path="/prueba" component={Prueba} />
-          <Route path="/" component={LandingPage} exact />
+          <Route path="/" component={Home} exact />
           <Route path="*" component={NotFound} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

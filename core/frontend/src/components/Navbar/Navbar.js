@@ -18,6 +18,8 @@ function Navbar() {
     } else {
       setDropdown(true);
     }
+
+    console.log(dropdown);
   };
 
   const onMouseLeave = () => {
@@ -26,6 +28,8 @@ function Navbar() {
     } else {
       setDropdown(false);
     }
+
+    console.log(dropdown);
   };
 
   return (

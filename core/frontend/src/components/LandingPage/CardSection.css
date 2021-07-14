@@ -1,9 +1,0 @@
-.card-section-container {
-  /* max-width: 100%; */
-  overflow: hidden;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(3rem, 25rem));
-  gap: 2rem;
-  justify-content: center;
-}
