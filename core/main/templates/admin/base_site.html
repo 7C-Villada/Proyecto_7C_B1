@@ -13,23 +13,14 @@
 {% block branding %}
 <div class="logo-container">
 
-    <img class="logo" src="{% static 'admin/Logo.png' %}" height="50rem"/>
-
-    <h1 style="font-family: 'Poppins', sans-serif; font-weight: 500;" class="title-admin">{% trans 'Fundación Aprender Haciendo' %}</h1>
-    
+    <a href="{% url 'admin:index' %}">
+        <img class="logo" src="{% static 'admin/Logo.png' %}" height="50rem"/>
+    </a>
+    <a href="{% url 'admin:index' %}">
+        <h1 style="font-family: 'Poppins', sans-serif; font-weight: 500;" class="title-admin">{% trans 'Fundación Aprender Haciendo' %}</h1>
+    </a>
 </div>
 
-<!-- <div style=" display: inline-block;">
-    <h1 id="site-name" >
-        <a href="{% url 'admin:index' %}">
-            <img style="float: left; height: 50px;" src="{% static 'admin/Logo.png' %}" height="40px" />
-        </a>
-    </h1>
-</div>
-
-<div style="float: right; display:flex;align-items:center;width:270px;height:70px;">
-    <h1 id="site-name" style="text-align: left; display: block; font-family: 'Poppins', sans-serif; font-weight: 500;">{% trans 'Fundación Aprender Haciendo' %}</h1>
-</div> -->
 {% endblock %}
 
 {% block nav-global %}{% endblock %}
