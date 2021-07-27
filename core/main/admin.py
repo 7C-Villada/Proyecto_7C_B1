@@ -1,5 +1,10 @@
 from django.contrib import admin
 from .models import *
+from django.contrib.auth.models import User
+from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group
+
+
 
 class ImageInline(admin.TabularInline):
     model = Image
@@ -20,3 +25,5 @@ admin.site.register(Convenio)
 admin.site.register(MercadoPagoLink)
 admin.site.register(MercadoLibreLink)
 admin.site.register(FormaParteLink)
+admin.site.unregister(User)
+admin.site.unregister(Group)
