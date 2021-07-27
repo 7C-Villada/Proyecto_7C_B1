@@ -43,11 +43,16 @@ class ConvenioAdmin(admin.ModelAdmin):
     list_display = ('localizacion',)
     search_fields = ('organizacion', 'localizacion')
 
+@admin.register(MercadoLibreLink)
+class MercadoLibreLinkAdmin(admin.ModelAdmin):
+    '''Admin View for MercadoLibreLink'''
+
+    search_fields = ('link', 'nombre', 'descripcion')
+
 # Register your models here.
 admin.site.register(Image)
 admin.site.register(ImageAlbum, ImageAlbumAdmin)
 admin.site.register(MercadoPagoLink)
-admin.site.register(MercadoLibreLink)
 admin.site.register(FormaParteLink)
 admin.site.unregister(User)
 admin.site.unregister(Group)

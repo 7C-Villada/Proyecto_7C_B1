@@ -72,7 +72,7 @@ class Taller(Actividad):
     class Meta:
 
         verbose_name = 'Taller'
-        verbose_name_plural = 'Taller'
+        verbose_name_plural = 'Talleres'
 
     def __str__(self):
         return super().__str__()
