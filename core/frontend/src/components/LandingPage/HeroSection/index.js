@@ -10,8 +10,16 @@ import {
 } from "./HeroElements";
 import { Button } from "../UI/ButtonElement";
 import Video from "../../../videos/video.mp4";
+import Axios from "axios";
 
 const HeroSection = () => {
+  const url = "http://127.0.0.1:8089/api/forma-parte";
+  const getFormUrl = () => {
+    Axios.get(url).then((response) => {
+      window.location.href = response.data.link;
+    });
+  };
+
   return (
     <>
       <HeroContainer>
@@ -27,7 +35,7 @@ const HeroSection = () => {
             medio ambiente.
           </HeroP>
           <HeroBtnWrapper>
-            <Button>Formá Parte</Button>
+            <Button onClick={getFormUrl}>Formá Parte</Button>
           </HeroBtnWrapper>
         </HeroContent>
       </HeroContainer>
