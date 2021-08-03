@@ -10,6 +10,8 @@ from .models import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import *
 
+from .mp_checkout import crearProductoDonacion
+
 def no_content():
     content = {'no content': ';)'}
     return Response(content, status=status.HTTP_204_NO_CONTENT)
@@ -403,5 +405,13 @@ def detalleImageAlbum(request, pk):
         ia = ImageAlbum.objects.get(id=pk)
         serializer = ImageAlbumSerializerDetail(ia, many=False)
         return Response(serializer.data)
+    except ObjectDoesNotExist:
+        return not_found()
+
+@api_view(['GET'])
+def montoDonacionMercadoPago(request, precio):
+
+    try:
+        return Response(crearProductoDonacion(precio))
     except ObjectDoesNotExist:
         return not_found()
