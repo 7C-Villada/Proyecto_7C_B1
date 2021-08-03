@@ -10,7 +10,6 @@ urlpatterns = [
 
     path('api/taller/', views.listaTaller, name='lista-taller'),
     path('api/proyecto/', views.listaProyecto, name='lista-proyecto'),
-    path('api/foto-portada/', views.singleFotoPortada, name='foto-portada'),
     path('api/convenio/', views.listaConvenio, name='convenio'),
     path('api/forma-parte/', views.singleFormaParteLink, name='forma-parte'),
     path('api/mercado-pago/', views.singleMercadoPagoLink, name='mercado-pago'),
@@ -24,5 +23,6 @@ urlpatterns = [
     path('api/taller/<str:pk>/', views.detalleTaller, name='detalle-taller'),
     path('api/historia/<str:pk>/', views.detalleHistoria, name='detalle-historia'),
     path('api/image-album/<str:pk>/', views.detalleImageAlbum, name='detalle-image-album'),
+    path('api/montoDonacionMercadoPago/<int:precio>/', views.montoDonacionMercadoPago, name='monto-donacion')
 
 ]

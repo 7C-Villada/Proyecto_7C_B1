@@ -1,0 +1,26 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+{% extends "admin/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}{{ title }} | {% trans "AprenderHaciendo" %}{% endblock %}
+{% block extrastyle %}
+     <link rel="stylesheet" type="text/css" href="{% static 'admin/admin_color.css' %}"/>
+{% endblock %}
+
+{% block branding %}
+<div class="logo-container">
+
+    <a href="{% url 'admin:index' %}">
+        <img class="logo" src="{% static 'admin/Logo.png' %}" height="50rem"/>
+    </a>
+    <a href="{% url 'admin:index' %}">
+        <h1 style="font-family: 'Poppins', sans-serif; font-weight: 500;" class="title-admin">{% trans 'Fundación Aprender Haciendo' %}</h1>
+    </a>
+</div>
+
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

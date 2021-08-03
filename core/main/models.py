@@ -72,25 +72,10 @@ class Taller(Actividad):
     class Meta:
 
         verbose_name = 'Taller'
-        verbose_name_plural = 'Taller'
+        verbose_name_plural = 'Talleres'
 
     def __str__(self):
         return super().__str__()
-
-class Mensaje(models.Model): # Los mensajes serán parte del Libro de Visitas
-    id = models.AutoField(primary_key = True)
-    publishDate = models.DateField(auto_now_add=True, null = False, verbose_name = 'Fecha de publicacion')
-    user = models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = 'Usuario')
-    content = models.TextField(null = False, verbose_name = 'Contenido')
-    approvedMessage = models.BooleanField(default = False, verbose_name = 'Mensaje aprobado') 
-
-    class Meta:
-        verbose_name = 'Mensaje'
-        verbose_name_plural = 'Mensajes'
-
-    def __str__(self):
-        return f'Mensaje N°{self.id}'
-
 
 #Serialized
 class Historia(models.Model): # Las historias serán parte del Libro de Oro
@@ -121,18 +106,6 @@ class Convenio(models.Model):
 
     def __str__(self):
         return f'Convenio {self.organizacion}'
-
-
-#Serialized
-class FotoPortada(SingletonModel):
-    imagen = cloudinary.models.CloudinaryField('image', folder='media/')
-    tracker = FieldTracker()
-
-    def __str__(self):
-        return "Portada"
-
-    class Meta:
-        verbose_name = "Portada"
 
 
 #Serialized
@@ -210,17 +183,6 @@ def pre_delete_Convenio(sender, instance, **kwargs):
 
 @receiver(post_save, sender=Convenio)
 def post_save_Convenio(sender, instance, created, **kwargs):
-    if not created:
-        imagenPrevia = instance.tracker.previous('imagen')
-        if imagenPrevia.public_id != instance.imagen.public_id:
-            cloudinary.uploader.destroy(imagenPrevia.public_id,invalidate=True)
-
-@receiver(pre_delete, sender=FotoPortada)
-def pre_delete_FotoPortada(sender, instance, **kwargs):
-    cloudinary.uploader.destroy(instance.imagen.public_id,invalidate=True)
-
-@receiver(post_save, sender=FotoPortada)
-def post_save_FotoPortada(sender, instance, created, **kwargs):
     if not created:
         imagenPrevia = instance.tracker.previous('imagen')
         if imagenPrevia.public_id != instance.imagen.public_id:
