@@ -14,7 +14,12 @@ def crearProductoDonacion(precio):
         ]
     }
 
-    preference_response = sdk.preference().create(preference_data)
-    preference = preference_response["response"]
+    preference = sdk.preference().create(preference_data) #status_here
+    preference_response = preference["response"]
 
-    return(preference)
+    print(preference)
+
+    if preference["status"] == 400:
+        return 400
+    else:
+        return(preference_response)

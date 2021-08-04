@@ -20,6 +20,10 @@ def not_found():
     content = {'not found': ';)'}
     return Response(content, status=status.HTTP_404_NOT_FOUND)
 
+def bad_request(msg):
+    content = {'bad request': msg}
+    return Response(content, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['GET'])
 def apiOverview(request):
@@ -412,6 +416,12 @@ def detalleImageAlbum(request, pk):
 def montoDonacionMercadoPago(request, precio):
 
     try:
-        return Response(crearProductoDonacion(precio))
+        mp_value = crearProductoDonacion(precio)
+
+        if mp_value == 400:
+            return bad_request('beware of the AFIP ;)')
+        else:    
+            return Response(mp_value)
+
     except ObjectDoesNotExist:
         return not_found()
