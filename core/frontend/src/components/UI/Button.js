@@ -1,11 +1,9 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import "./Button.css";
 
-const Button = () => {
-  const history = useHistory();
+const Button = (props) => {
   const handleUrl = () => {
-    history.push("/colabora");
+    window.location.href = props.link;
   };
 
   return (

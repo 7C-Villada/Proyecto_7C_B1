@@ -13,7 +13,8 @@ import Video from "../../../videos/video.mp4";
 import Axios from "axios";
 
 const HeroSection = () => {
-  const url = "http://127.0.0.1:8089/api/forma-parte";
+  const url = "http://127.0.0.1:8089/api/forma-parte"; // Guardar endpoint
+  // Peticion a la API para tomar URL del formulario
   const getFormUrl = () => {
     Axios.get(url).then((response) => {
       window.location.href = response.data.link;

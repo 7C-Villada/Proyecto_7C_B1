@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import Button from "../UI/Button";
 import navLogo from "./Logo.png";
 import "./Navbar.css";
+import Axios from "axios";
 
 function Navbar() {
+  const [linkPago, setLinkPago] = useState(null);
+
+  useEffect(() => {
+    Axios.get("http://127.0.0.1:8000/api/montoDonacionMercadoPago/43/").then(
+      (order) => {
+        setLinkPago(order.data.init_point);
+      }
+    );
+  }, []);
+
+  const redirectMercadoPago = () => {
+    window.location.href = linkPago;
+  };
+
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
@@ -83,13 +98,14 @@ function Navbar() {
             <Link
               to="/colabora"
               className="nav-links-mobile"
-              onClick={closeMobileMenu}
+              onClick={redirectMercadoPago}
+              id="checkout-mp"
             >
               Colaborá
             </Link>
           </li>
         </ul>
-        <Button className="nav-btn" />
+        <Button className="nav-btn" link={linkPago} />
       </nav>
     </>
   );
