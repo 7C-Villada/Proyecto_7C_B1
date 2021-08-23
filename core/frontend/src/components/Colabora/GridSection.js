@@ -47,7 +47,7 @@ const GridSection = () => {
 
   useEffect(() => {
     axios
-      .get("api/mercado-libre/")
+      .get("/api/mercado-libre/")
       .then((response) => {
         setCardData(response.data);
       })
