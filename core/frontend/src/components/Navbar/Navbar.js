@@ -98,14 +98,14 @@ function Navbar() {
             <Link
               to="/colabora"
               className="nav-links-mobile"
-              onClick={redirectMercadoPago}
               id="checkout-mp"
+              onClick={closeMobileMenu}
             >
               Colaborá
             </Link>
           </li>
         </ul>
-        <Button className="nav-btn" link={linkPago} />
+        <Button className="nav-btn" link="/colabora" text="Colaborá" />
       </nav>
     </>
   );

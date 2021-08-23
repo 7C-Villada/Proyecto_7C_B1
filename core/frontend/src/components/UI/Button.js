@@ -9,7 +9,7 @@ const Button = (props) => {
   return (
     <div>
       <button className="navButton" onClick={handleUrl}>
-        Colaborá
+        {props.text}
       </button>
     </div>
   );

@@ -30,7 +30,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="*" component={NotFound} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

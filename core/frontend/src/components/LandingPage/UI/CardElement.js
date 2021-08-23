@@ -26,6 +26,7 @@ export const CardContainer = styled.div`
 
 export const DataWrapper = styled.div`
   overflow: hidden;
+  width: 100%;
   border-radius: 15px;
 `;
 

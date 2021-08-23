@@ -1,10 +1,18 @@
 import React from "react";
+import DonateSection from "../Colabora/DonateSection";
+import styled from "styled-components";
+import GridSection from "../Colabora/GridSection";
+
+const ColaboraContainer = styled.div`
+  height: 100vh;
+`;
 
 const Colabora = () => {
   return (
-    <div>
-      <h1>Colaborá</h1>
-    </div>
+    <ColaboraContainer>
+      <DonateSection />
+      <GridSection />
+    </ColaboraContainer>
   );
 };
 
