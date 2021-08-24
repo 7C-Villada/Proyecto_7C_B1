@@ -9,7 +9,7 @@ export const NavbarStyle = styled.nav.attrs({
 `;
 
 export const NavButton = styled.button.attrs({
-  className: "btn btn-outline-light rounded border-0",
+  className: "btn btn-outline-success rounded border-0",
 })`
   color: #f8f0bb !important;
   &:hover {
@@ -23,7 +23,7 @@ export const NavButton = styled.button.attrs({
 `;
 
 export const NavButtonDropdown = styled.button.attrs({
-  className: "btn btn-outline-light dropdown-toggle rounded border-0",
+  className: "btn btn-outline-success dropdown-toggle rounded border-0",
 })`
   color: #f8f0bb !important;
   &:hover {
@@ -43,7 +43,7 @@ export const UlDropdownMenu = styled.ul.attrs({
 `;
 
 export const ButtonColabora = styled.button.attrs({
-  className: "btn btn-outline-light rounded-pill border-4",
+  className: "btn btn-outline-success rounded-pill border-4",
 })`
   color: #0fc11f;
   border-color: #0fc11f;
