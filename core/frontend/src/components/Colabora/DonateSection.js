@@ -114,7 +114,7 @@ const DonateSection = () => {
           <label for="donateInput">Monto a donar</label>
           <DonateInput
             type="number"
-            placeholder="$$$$$"
+            placeholder="$"
             min="1"
             max="10000"
             id="donateInupt"

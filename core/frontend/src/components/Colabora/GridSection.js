@@ -32,6 +32,8 @@ const GridCardWrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
   align-items: center;
+  width: 60%;
+  margin-bottom: 150px;
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr;
@@ -39,6 +41,7 @@ const GridCardWrapper = styled.div`
 
   @media screen and (max-width: 780px) {
     grid-template-columns: 1fr;
+    width: 80%;
   }
 `;
 
