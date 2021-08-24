@@ -8,6 +8,7 @@ import {
   NavButton,
   NavButtonDropdown,
   UlDropdownMenu,
+  NavbarCollapse,
 } from "./styles/Navbar";
 
 const Navbar = () => {
@@ -29,7 +30,7 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <NavbarCollapse id="navbarNavDropdown">
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavButton href="/">Inicio</NavButton>
@@ -64,12 +65,12 @@ const Navbar = () => {
                 <NavButton href="/">Talleres y Proyectos</NavButton>
               </li>
             </ul>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li>
                 <ButtonColabora>Colaborá</ButtonColabora>
               </li>
             </ul>
-          </div>
+          </NavbarCollapse>
         </div>
       </NavbarStyle>
     </>

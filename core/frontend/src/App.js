@@ -8,8 +8,8 @@ import "bootstrap/dist/js/bootstrap.bundle";
 
 // Primary components
 import Navbar from "./components/ui/Navbar/Navbar";
+import Home from "./components/views/Home/Home";
 // import Prueba from "./components/Prueba/Prueba";
-// import Home from "./components/Pages";
 // import Footer from "./components/Footer/Footer";
 
 // Secondary components
@@ -27,6 +27,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
+        <Home />
         <Switch>
           {/* <Route path="/talleres-y-proyectos" component={TalleresProyectos} />
           <Route path="/conocenos" component={Conocenos} />

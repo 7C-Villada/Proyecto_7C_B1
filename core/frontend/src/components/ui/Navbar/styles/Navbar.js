@@ -57,3 +57,9 @@ export const ButtonColabora = styled.button.attrs({
     box-shadow: none;
   }
 `;
+
+export const NavbarCollapse = styled.div.attrs({
+  className: "collapse navbar-collapse rounded",
+})`
+  background: #3e2307;
+`;
