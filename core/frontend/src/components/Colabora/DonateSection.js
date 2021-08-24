@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Button from "../UI/Button";
+import axios from "axios";
 
 const DonateContainer = styled.div`
   height: 50vh;
@@ -83,6 +84,22 @@ const DonateButton = styled.button`
 `;
 
 const DonateSection = () => {
+  const [donationValue, setDonationValue] = useState();
+
+  const handleChange = (event) => {
+    setDonationValue(event.target.value);
+  };
+
+  const retrieveDonation = (event) => {
+    event.preventDefault();
+
+    axios
+      .get("/api/montoDonacionMercadoPago/" + donationValue)
+      .then((response) => {
+        window.location.href = response.data.init_point;
+      });
+  };
+
   return (
     <>
       <DonateContainer>
@@ -101,8 +118,9 @@ const DonateSection = () => {
             min="1"
             max="10000"
             id="donateInupt"
+            onChange={handleChange}
           />
-          <DonateButton>Doná</DonateButton>
+          <DonateButton onClick={retrieveDonation}>Doná</DonateButton>
         </InputContainer>
       </DonateContainer>
     </>
