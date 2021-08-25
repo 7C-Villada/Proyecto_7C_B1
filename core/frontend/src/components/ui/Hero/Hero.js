@@ -1,6 +1,6 @@
 import React from "react";
 
-import { H1Styled } from "./styles/Hero";
+import { H1Styled, ButtonFormaParte } from "./styles/Hero";
 
 import { IMGBackground } from "../../views/Home/styles/Home.js";
 
@@ -18,15 +18,15 @@ const Hero = () => {
               medio ambiente.
             </p>
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <button type="button" className="btn btn-primary btn-lg px-4 gap-3">
-                Primary button
-              </button>
-              <button
+              <ButtonFormaParte>
+                Formá Parte
+              </ButtonFormaParte>
+              {/* <button
                 type="button"
                 className="btn btn-outline-secondary btn-lg px-4"
               >
                 Secondary
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

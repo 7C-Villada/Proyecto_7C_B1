@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example" >
 export const NavbarStyle = styled.nav.attrs({
   className: "navbar navbar-expand-lg navbar-dark bg-dark",
 })`
@@ -12,9 +11,11 @@ export const NavbarStyle = styled.nav.attrs({
 export const NavButton = styled.button.attrs({
   className: "btn btn-outline-success rounded border-0",
 })`
+  margin-left: 2px;
+  margin-right: 2px;
   color: #f8f0bb !important;
   &:hover {
-    background-color: #0fc11f;
+    background-color: #49a651;
     color: #f8f0bb !important;
   }
   &:focus {
@@ -26,9 +27,11 @@ export const NavButton = styled.button.attrs({
 export const NavButtonDropdown = styled.button.attrs({
   className: "btn btn-outline-success dropdown-toggle rounded border-0",
 })`
+  margin-left: 2px;
+  margin-right: 2px;
   color: #f8f0bb !important;
   &:hover {
-    background-color: #0fc11f !important ;
+    background-color: #49a651 !important ;
     color: #f8f0bb !important;
   }
   &:focus {
@@ -37,8 +40,6 @@ export const NavButtonDropdown = styled.button.attrs({
   }
 `;
 
-
-// <ul class="dropdown-menu" aria-labelledby="dropdown01"></ul>
 export const UlDropdownMenu = styled.ul.attrs({
   className: "dropdown-menu",
 })`
@@ -46,14 +47,16 @@ export const UlDropdownMenu = styled.ul.attrs({
 `;
 
 export const ButtonColabora = styled.button.attrs({
-  className: "btn btn-outline-success rounded-pill border-4",
+  className: "btn btn-outline-success rounded-pill border-1",
 })`
-  color: #0fc11f;
-  border-color: #0fc11f;
+  margin-left: 2px;
+  margin-right: 2px;
+  color: #49a651;
+  border-color: #49a651;
   $btn-padding-y: "10";
   &:hover {
-    background-color: #0fc11f;
-    border-color: #0fc11f;
+    background-color: #50b559;
+    border-color: #50b559;
   }
   &:focus {
     outline: none !important;
