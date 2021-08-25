@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
+// <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example" >
 export const NavbarStyle = styled.nav.attrs({
-  className: "navbar navbar-expand-lg navbar-dark",
+  className: "navbar navbar-expand-lg navbar-dark bg-dark",
 })`
-  background: #3e2307;
-  height: 80px;
-  font-size: 1rem;
+  background: rgb(62,35,7);
+  background: linear-gradient(0deg, rgba(62,35,7,1) 0%, rgba(62,35,7,1) 100%);
+  // font-size: 1rem;
 `;
 
 export const NavButton = styled.button.attrs({
@@ -36,6 +37,8 @@ export const NavButtonDropdown = styled.button.attrs({
   }
 `;
 
+
+// <ul class="dropdown-menu" aria-labelledby="dropdown01"></ul>
 export const UlDropdownMenu = styled.ul.attrs({
   className: "dropdown-menu",
 })`
@@ -56,10 +59,4 @@ export const ButtonColabora = styled.button.attrs({
     outline: none !important;
     box-shadow: none;
   }
-`;
-
-export const NavbarCollapse = styled.div.attrs({
-  className: "collapse navbar-collapse rounded",
-})`
-  background: #3e2307;
 `;
