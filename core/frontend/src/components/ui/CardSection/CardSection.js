@@ -3,13 +3,12 @@ import imgCard1 from './static/unsplash-photo-1.jpg';
 import imgCard2 from './static/unsplash-photo-2.jpg';
 import imgCard3 from './static/unsplash-photo-3.jpg';
 import logo from '../Navbar/Logo.png';
-import { Card, Header, Divider } from './style/CardSectionStyle.js';
+import { Card, Header } from './style/CardSectionStyle.js';
 // import {  } from "./styles/Hero";
 
 const CardSection = () => {
   return (
     <>
-    <Divider></Divider>
         <div className="container px-4 py-5" id="custom-cards">
             <Header>Sobre Nosotros</Header>
 
@@ -72,8 +71,6 @@ const CardSection = () => {
             </div>
             </div>
         </div>
-
-        <Divider></Divider>
     </>
   );
 };
