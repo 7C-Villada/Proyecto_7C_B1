@@ -43,6 +43,10 @@ export const ButtonFormaParte = styled.button.attrs({
     outline: none !important;
     box-shadow: none;
   }
+
+  @media screen and (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const IMGBackground = styled.div.attrs({
@@ -56,6 +60,15 @@ export const IMGBackground = styled.div.attrs({
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+`;
+
+export const HeroContainer = styled.div.attrs({
+  className: "container-fluid px-4 py-5 text-center row",
+})`
+  position: relative;
+  height: 80vh;
+  margin: 0;
+  padding: 0;
 `;
 
 export const HeroBackground = styled.div`
@@ -91,4 +104,8 @@ export const PDescription = styled.p.attrs({
   color: #f8f0bb;
   font-size: 1.6rem;
   text-shadow: 10px 5px 10px black;
+
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
