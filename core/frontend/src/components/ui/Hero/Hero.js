@@ -11,11 +11,11 @@ import {
 const Hero = () => {
   return (
     <>
-      <HeroBackground>
-        <MP4Background autoPlay muted loop></MP4Background>
-      </HeroBackground>
       {/* <IMGBackground> */}
-      <div className="px-4 py-5 my-5 text-center">
+      <div className="container-fluid px-4 py-5 my-5 text-center">
+        <HeroBackground>
+          <MP4Background autoPlay muted loop></MP4Background>
+        </HeroBackground>
         <H1Styled>Aprender</H1Styled>
         <H1Styled primary>Haciendo</H1Styled>
         <div className="col-lg-6 mx-auto">
