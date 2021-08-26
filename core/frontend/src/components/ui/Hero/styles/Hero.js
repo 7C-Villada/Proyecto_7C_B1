@@ -6,7 +6,7 @@ export const H1Styled = styled.h1.attrs({
 color: ${(props) => (props.primary ? "#F8F0BB" : "#49a651")};
 font-size: 5rem;
 text-align: center;
-text-shadow: 0px 0px 15px black;
+text-shadow: 0px 0px 6px black;
 line-height: 80px;
 
 @media screen and (max-width: 760px) {

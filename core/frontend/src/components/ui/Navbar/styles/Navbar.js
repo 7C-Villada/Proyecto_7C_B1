@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NavbarStyle = styled.nav.attrs({
-  className: "navbar navbar-expand-lg navbar-dark bg-dark",
+  className: "navbar sticky-top navbar-expand-lg navbar-dark bg-dark",
 })`
   background: rgb(62,35,7);
   background: linear-gradient(0deg, rgba(62,35,7,1) 0%, rgba(62,35,7,1) 100%);
