@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+import bg from "../../../views/Home/bg.jpg";
+
+import video from "../../../../videos/video.mp4";
+
 export const H1Styled = styled.h1.attrs({
   className: "display-5 fw-bold",
 })`
@@ -38,20 +42,38 @@ export const ButtonFormaParte = styled.button.attrs({
   }
 `;
 
-export const ButtonColabora = styled.button.attrs({
-  className: "btn btn-outline-success rounded-pill border-1",
+export const IMGBackground = styled.div.attrs({
+  className: "bg-image",
 })`
-  margin-left: 2px;
-  margin-right: 2px;
-  color: #0fc11f;
-  border-color: #0fc11f;
-  $btn-padding-y: "10";
-  &:hover {
-    background-color: #0fc11f;
-    border-color: #0fc11f;
-  }
-  &:focus {
-    outline: none !important;
-    box-shadow: none;
-  }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(${bg});
+  // height: 50%;
+  // width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+`;
+
+export const HeroBackground = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+  width: 100%;
+  height: 100%;
+  background: #232a24;
+`;
+
+export const MP4Background = styled.video.attrs({
+  src: video,
+})`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;
