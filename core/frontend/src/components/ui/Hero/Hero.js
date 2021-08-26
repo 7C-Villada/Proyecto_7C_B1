@@ -19,8 +19,8 @@ const Hero = () => {
           <MP4Background autoPlay muted loop></MP4Background>
         </HeroBackground>
         <div className="col-lg-12 align-self-center">
-          <H1Styled>Aprender</H1Styled>
-          <H1Styled>Haciendo</H1Styled>
+          <H1Styled primary>Aprender</H1Styled>
+          <H1Styled >Haciendo</H1Styled>
           <div className="container">
             <PDescription>
               Nuestro objetivo principal es educar en la concientización del

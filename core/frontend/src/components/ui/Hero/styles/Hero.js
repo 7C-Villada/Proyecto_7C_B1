@@ -7,7 +7,7 @@ import video from "../../../../videos/video.mp4";
 export const H1Styled = styled.h1.attrs({
   className: "display-5 fw-bold",
 })`
-  color: ${(props) => (props.primary ? "#F8F0BB" : "#49a651")};
+  color: ${(props) => (props.primary ? "#49A651" : "#F8F0BB")};
   font-size: 5rem;
   text-align: center;
   text-shadow: 0px 0px 6px black;
