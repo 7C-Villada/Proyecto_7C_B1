@@ -25,7 +25,7 @@ export const H1Styled = styled.h1.attrs({
 `;
 
 export const ButtonFormaParte = styled.button.attrs({
-  className: "btn btn-lg px-4 gap-3 rounded-pill border-1",
+  className: "btn btn-lg px-4 gap-3 rounded-pill",
   type: "button",
 })`
   color: #f8f0bb !important;
@@ -36,7 +36,6 @@ export const ButtonFormaParte = styled.button.attrs({
   $btn-padding-y: "10";
   &:hover {
     background: #f8f0bb;
-    border: 6px solid #f8f0bb;
     color: #49a651 !important;
   }
   &:focus {

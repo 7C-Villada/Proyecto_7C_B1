@@ -50,7 +50,7 @@ export const UlDropdownMenu = styled.ul.attrs({
 `;
 
 export const ButtonColabora = styled.button.attrs({
-  className: "btn rounded-pill border-1",
+  className: "btn rounded-pill border-2",
 })`
   margin-left: 2px;
   margin-right: 2px;
