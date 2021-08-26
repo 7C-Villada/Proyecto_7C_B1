@@ -29,16 +29,19 @@ export const ButtonFormaParte = styled.button.attrs({
   type: "button",
 })`
   color: #f8f0bb !important;
+  font-size: 1.6rem;
   background-color: #49a651;
   border-color: #49a651;
+  box-shadow: 0 10px 10px black;
   $btn-padding-y: "10";
   &:hover {
-    background-color: #50b559;
-    border-color: #50b559;
+    background: #f8f0bb;
+    border: 6px solid #f8f0bb;
+    color: #49a651 !important;
   }
   &:focus {
     outline: none !important;
-    box-shadow: none;
+    box-shadow: 0 10px 10px black;
   }
 `;
 
@@ -80,4 +83,12 @@ export const MP4Background = styled.video.attrs({
   object-fit: cover;
   background: #232a24;
   opacity: 0.6;
+`;
+
+export const PDescription = styled.p.attrs({
+  className: "lead mb-4",
+})`
+  color: #f8f0bb;
+  font-size: 1.6rem;
+  text-shadow: 10px 5px 10px black;
 `;
