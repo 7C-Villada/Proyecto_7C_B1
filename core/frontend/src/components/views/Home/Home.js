@@ -3,6 +3,8 @@ import React from "react";
 // UI modules
 import Hero from "../../ui/Hero/Hero";
 import CardSection from "../../ui/CardSection/CardSection";
+import ConveniosSection from "../../ui/ConveniosSection/ConveniosSection";
+
 import { Divider } from "./styles/Home"
 import MapSection from '../../ui/MapSection/MapSection'
 
@@ -17,6 +19,7 @@ const Home = () => {
       <Divider></Divider>
       <MapSection />
       <Divider></Divider>
+      <ConveniosSection></ConveniosSection>
     </>
   );
 };
