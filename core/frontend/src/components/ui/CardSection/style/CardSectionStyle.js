@@ -4,16 +4,16 @@ import styled from "styled-components";
 export const Card = styled.div.attrs({
   className: "card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
 })`
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${(props) => props.bg});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(${(props) => props.bg});
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   border-radius: 1rem;
   border-color: white;
-  transition: transform .2s; 
+  transition: transform .1s; 
 
   &:hover {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${(props) => props.bg});
+    background-image: linear-gradient(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.2)), url(${(props) => props.bg});
     border-color: #50b559;
     transform: scale(1.06);
   }

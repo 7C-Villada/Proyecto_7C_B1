@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import bg from "../../../views/Home/bg.jpg";
-
 import video from "../../../../videos/video.mp4";
 
 export const H1Styled = styled.h1.attrs({
@@ -47,19 +45,6 @@ export const ButtonFormaParte = styled.button.attrs({
   @media screen and (max-width: 480px) {
     font-size: 1.2rem;
   }
-`;
-
-export const IMGBackground = styled.div.attrs({
-  className: "bg-image",
-})`
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(${bg});
-  // height: 50%;
-  // width:100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
 `;
 
 export const HeroContainer = styled.div.attrs({
