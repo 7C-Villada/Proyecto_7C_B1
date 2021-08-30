@@ -5,6 +5,9 @@ import Hero from "../../ui/Hero/Hero";
 import CardSection from "../../ui/CardSection/CardSection";
 import CarouselSection from "../../ui/CarouselSection/CarouselSection";
 import { Divider } from "./styles/Home";
+import ConveniosSection from "../../ui/ConveniosSection/ConveniosSection";
+import MapSection from '../../ui/MapSection/MapSection'
+
 
 // Styles modules
 
@@ -16,6 +19,11 @@ const Home = () => {
       <CardSection />
       <Divider></Divider>
       <CarouselSection></CarouselSection>
+      <Divider></Divider>
+      <MapSection />
+      <Divider></Divider>
+      <ConveniosSection></ConveniosSection>
+
     </>
   );
 };
