@@ -14,6 +14,11 @@ import Home from "./components/views/Home/Home";
 
 // Secondary components
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import TalleresProyectos from "./components/views/TalleresProyectos/TalleresProyectos";
+import Reserva from "./components/views/Reserva/Reserva";
+import Campamentos from "./components/views/Campamentos/Campamentos";
+import Conocenos from "./components/views/Conocenos/Conocenos";
+import Colabora from "./components/views/Colabora/Colabora";
 // import Colabora from "./components/Pages/Colabora";
 // import CampoEscuela from "./components/Pages/CampoEscuela";
 // import Reserva from "./components/Pages/Reserva";
@@ -27,17 +32,15 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <Home />
+        {/* <Home /> */}
         <Switch>
-          {/* <Route path="/talleres-y-proyectos" component={TalleresProyectos} />
-          <Route path="/conocenos" component={Conocenos} />
-          <Route path="/campamentos" component={Campamentos} />
+          <Route path="/talleres-y-proyectos" component={TalleresProyectos}/>
           <Route path="/reserva" component={Reserva} />
-          <Route path="/campo-escuela" component={CampoEscuela} />
+          <Route path="/campamentos" component={Campamentos} />
+          <Route path="/conocenos" component={Conocenos} />
           <Route path="/colabora" component={Colabora} />
-          <Route path="/prueba" component={Prueba} />
+          {/* <Route path="*" component={NotFound} /> */}
           <Route path="/" component={Home} exact />
-          <Route path="*" component={NotFound} /> */}
         </Switch>
         {/* <Footer /> */}
       </div>
