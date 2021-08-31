@@ -23,6 +23,7 @@ urlpatterns = [
     path('api/taller/<str:pk>/', views.detalleTaller, name='detalle-taller'),
     path('api/historia/<str:pk>/', views.detalleHistoria, name='detalle-historia'),
     path('api/image-album/<str:pk>/', views.detalleImageAlbum, name='detalle-image-album'),
-    path('api/montoDonacionMercadoPago/<int:precio>/', views.montoDonacionMercadoPago, name='monto-donacion')
+    path('api/montoDonacionMercadoPago/<int:precio>/', views.montoDonacionMercadoPago, name='monto-donacion'),
+    path('api/ultimosProyectos/', views.ultimosProyectos, name='ultimos-proyectos')
 
 ]
