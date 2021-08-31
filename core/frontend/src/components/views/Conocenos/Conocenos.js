@@ -1,9 +1,14 @@
 import React from "react";
+import ComoHacemos from "../../ui/ComoHacemos/ComoHacemos";
+import QueHacemos from "../../ui/QueHacemos/QueHacemos";
+import QuienesSomos from "../../ui/QuienesSomos/QuienesSomos";
 
 const Conocenos = () => {
   return (
     <>
-        <h1>Conocenos</h1>
+      <QuienesSomos/>
+      <QueHacemos/> 
+      <ComoHacemos/>      
     </>
   );
 };
