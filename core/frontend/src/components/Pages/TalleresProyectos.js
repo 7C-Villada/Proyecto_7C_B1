@@ -1,9 +1,13 @@
 import React from "react";
+import HeaderSection from "../TalleresYProyectos/HeaderSection";
+import BodySection from "../TalleresYProyectos/BodySection";
+
 
 const TalleresProyectos = () => {
   return (
     <div>
-      <h1>Talleres y Proyectos</h1>
+      <HeaderSection />
+      <BodySection />
     </div>
   );
 };

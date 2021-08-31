@@ -12,6 +12,8 @@ import Reserva from "./components/Pages/Reserva";
 import Campamentos from "./components/Pages/Campamentos";
 import Conocenos from "./components/Pages/Conocenos";
 import TalleresProyectos from "./components/Pages/TalleresProyectos";
+import Talleres from "./components/Pages/Talleres"
+import Proyectos from "./components/Pages/Proyectos";
 import NotFound from "./components/Pages/NotFound";
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/talleres-y-proyectos" component={TalleresProyectos} />
+          <Route path="/taller/:id" component={Talleres} />
+          <Route path="/proyecto/:id" component={Proyectos} />
           <Route path="/conocenos" component={Conocenos} />
           <Route path="/campamentos" component={Campamentos} />
           <Route path="/reserva" component={Reserva} />
