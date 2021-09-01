@@ -1,8 +1,11 @@
-import React from 'react'
-import { Header, MapDiv } from './style/MapSectionElements'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import React from 'react';
+import { Header, MapDiv } from './style/MapSectionElements';
+import CustomMap from './CustomMap';
+
 
 const MapSection = () => {
+
+    const tiles = './tiles/{z}/{x}/{y}.png';
 
     return (
         <>
@@ -10,16 +13,7 @@ const MapSection = () => {
                 <Header>Mapa Interactivo</Header>
                 <div className='row py-5'>
                     {/* <MapDiv> */}
-                        <MapContainer
-                            center={[-31.1388288,-64.4520141]} 
-                            zoom={13} 
-                            style={{ width: '100%', height: '500px'}}
-                        >
-                            <TileLayer
-                                attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
-                        </MapContainer>
+                        <CustomMap></CustomMap>
                     {/* </MapDiv> */}
                 </div>
             </div>
