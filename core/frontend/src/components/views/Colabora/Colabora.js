@@ -1,9 +1,10 @@
 import React from "react";
+import FormSection from "../../ui/FormSection/FormSection";
 
 const Colabora = () => {
   return (
     <>
-        <h1>Colabora</h1>
+      <FormSection />
     </>
   );
 };
