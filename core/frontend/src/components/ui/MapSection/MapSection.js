@@ -11,7 +11,7 @@ const MapSection = () => {
         <>
             <div className='container py-5'>
                 <Header>Mapa Interactivo</Header>
-                <div className='row py-5'>
+                <div className='row py-auto'>
                     {/* <MapDiv> */}
                         <CustomMap></CustomMap>
                     {/* </MapDiv> */}
