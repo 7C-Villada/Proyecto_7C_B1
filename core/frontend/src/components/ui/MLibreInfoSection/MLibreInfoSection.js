@@ -4,7 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 const Header = styled.h2.attrs({
-  className: "pb-2 border-bootom fw-bold",
+  className: "pb-2 border-bottom fw-bold",
 })`
   color: rgb(62, 35, 7);
 `;
