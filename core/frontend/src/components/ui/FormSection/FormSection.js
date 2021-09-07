@@ -3,7 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 
 const FormH1 = styled.h1`
-  color: #3e2307;
+  color: #0fc11f;
   font-size: 2.5rem;
 `;
 
@@ -71,22 +71,24 @@ const FormSection = () => {
         className="container row align-items-center mx-auto"
         style={{ height: "80vh", margin: "0" }}
       >
-        <div className="col text-center">
-          <FormH1>Doná para ayudarnos</FormH1>
-          <FormP>
-            Con tu ayuda podemos seguir
-            <br /> con la fundación y hacer mejores proyectos.
-          </FormP>
-        </div>
-        <div className="col d-flex flex-column-reverse align-items-center">
-          <DonateButton onClick={retrieveDonation}>Pagar</DonateButton>
-          <DonateInput
-            type="number"
-            placeholder="Monto a Donar"
-            min="1"
-            max="10000"
-            onChange={handleChange}
-          />
+        <div className="shadow card py-5">
+          <div className="col text-center">
+            <FormH1>Doná para ayudarnos</FormH1>
+            <FormP>
+              Con tu ayuda podemos seguir
+              <br /> con la fundación y hacer mejores proyectos.
+            </FormP>
+          </div>
+          <div className="col d-flex flex-column-reverse align-items-center">
+            <DonateButton onClick={retrieveDonation}>Pagar</DonateButton>
+            <DonateInput
+              type="number"
+              placeholder="Monto a Donar"
+              min="1"
+              max="10000"
+              onChange={handleChange}
+            />
+          </div>
         </div>
       </div>
     </>
