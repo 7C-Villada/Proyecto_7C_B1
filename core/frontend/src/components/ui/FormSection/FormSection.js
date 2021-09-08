@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import background from "../../../fotos/mountain.jpg";
+
+const Background = styled.div`
+  width: 100%;
+  height: 80vh;
+  background: url(${background});
+`;
 
 const FormH1 = styled.h1`
   color: #0fc11f;
   font-size: 2.5rem;
+  font-weight: bold;
 `;
 
 const FormP = styled.p`
@@ -67,30 +75,32 @@ const FormSection = () => {
 
   return (
     <>
-      <div
-        className="container row align-items-center mx-auto"
-        style={{ height: "80vh", margin: "0" }}
-      >
-        <div className="shadow card py-5">
-          <div className="col text-center">
-            <FormH1>Doná para ayudarnos</FormH1>
-            <FormP>
-              Con tu ayuda podemos seguir adelante
-              <br /> con este gran proyecto.
-            </FormP>
-          </div>
-          <div className="col d-flex flex-column-reverse align-items-center">
-            <DonateButton onClick={retrieveDonation}>Donar</DonateButton>
-            <DonateInput
-              type="number"
-              placeholder="Monto a Donar"
-              min="1"
-              max="10000"
-              onChange={handleChange}
-            />
+      <Background>
+        <div
+          className="container row align-items-center mx-auto"
+          style={{ height: "80vh", margin: "0" }}
+        >
+          <div className="shadow card py-5">
+            <div className="col text-center">
+              <FormH1>Doná para ayudarnos</FormH1>
+              <FormP>
+                Con tu ayuda podemos seguir adelante
+                <br /> con este gran proyecto.
+              </FormP>
+            </div>
+            <div className="col d-flex flex-column-reverse align-items-center">
+              <DonateButton onClick={retrieveDonation}>Donar</DonateButton>
+              <DonateInput
+                type="number"
+                placeholder="Monto a Donar"
+                min="1"
+                max="10000"
+                onChange={handleChange}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </Background>
     </>
   );
 };

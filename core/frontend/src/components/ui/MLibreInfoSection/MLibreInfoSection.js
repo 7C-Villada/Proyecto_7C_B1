@@ -31,7 +31,7 @@ const MLibreInfoSection = () => {
           {cardData.map((card) => {
             return (
               <div className="col">
-                <Card />
+                <Card name={card.nombre} link={card.link} />
               </div>
             );
           })}

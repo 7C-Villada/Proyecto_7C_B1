@@ -24,12 +24,18 @@ const MLCard = styled.div.attrs({
   }
 `;
 
-const Card = () => {
+const Card = (props) => {
+  const mlibreRedirect = () => {
+    window.location.href = props.link;
+  };
+
   return (
     <>
-      <MLCard>
+      <MLCard onClick={mlibreRedirect}>
         <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-          <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Card Title</h2>
+          <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+            {props.name}
+          </h2>
         </div>
       </MLCard>
     </>
