@@ -5,7 +5,7 @@ import RasterCoords from 'leaflet-rastercoords';
 const CustomMap = () => {
 
   const tiles = './tiles/{z}/{x}/{y}.png';
-  var minZoom = 0
+  var minZoom = 1
   var maxZoom = 4
   var img = [
     3831, // original width of image `karta.jpg`

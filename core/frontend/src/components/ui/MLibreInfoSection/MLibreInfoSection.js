@@ -26,7 +26,7 @@ const MLibreInfoSection = () => {
   return (
     <>
       <div className="container py-5">
-        <Header>Nuestras tiendas</Header>
+        <Header>Nuestros Principales Colaboradores</Header>
         <div className="row row-cols-1 row-cols-md-2 g-4">
           {cardData.map((card) => {
             return (

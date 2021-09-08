@@ -19,6 +19,7 @@ import Reserva from "./components/views/Reserva/Reserva";
 import Campamentos from "./components/views/Campamentos/Campamentos";
 import Conocenos from "./components/views/Conocenos/Conocenos";
 import Colabora from "./components/views/Colabora/Colabora";
+import Footer from "./components/ui/Footer/Footer";
 // import Colabora from "./components/Pages/Colabora";
 // import CampoEscuela from "./components/Pages/CampoEscuela";
 // import Reserva from "./components/Pages/Reserva";
@@ -42,7 +43,7 @@ function App() {
           {/* <Route path="*" component={NotFound} /> */}
           <Route path="/" component={Home} exact />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );

@@ -20,11 +20,10 @@ export const NavButton = styled.button.attrs({
   color: #f8f0bb !important;
   &:hover {
     background-color: #49a651;
-    color: #f8f0bb !important;
   }
   &:focus {
     outline: none !important;
-    box-shadow: none;
+    box-shadow: none !important;
   }
 `;
 

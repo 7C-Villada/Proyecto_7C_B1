@@ -75,12 +75,12 @@ const FormSection = () => {
           <div className="col text-center">
             <FormH1>Doná para ayudarnos</FormH1>
             <FormP>
-              Con tu ayuda podemos seguir
-              <br /> con la fundación y hacer mejores proyectos.
+              Con tu ayuda podemos seguir adelante
+              <br /> con este gran proyecto.
             </FormP>
           </div>
           <div className="col d-flex flex-column-reverse align-items-center">
-            <DonateButton onClick={retrieveDonation}>Pagar</DonateButton>
+            <DonateButton onClick={retrieveDonation}>Donar</DonateButton>
             <DonateInput
               type="number"
               placeholder="Monto a Donar"
