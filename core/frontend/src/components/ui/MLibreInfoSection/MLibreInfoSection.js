@@ -17,6 +17,7 @@ const MLibreInfoSection = () => {
       .get("/api/mercado-libre/")
       .then((response) => {
         setCardData(response.data);
+        console.log(cardData);
       })
       .catch((error) => {
         console.log(error);
@@ -28,13 +29,20 @@ const MLibreInfoSection = () => {
       <div className="container py-5">
         <Header>Nuestros Principales Colaboradores</Header>
         <div className="row row-cols-1 row-cols-md-2 g-4">
-          {cardData.map((card) => {
-            return (
-              <div className="col">
-                <Card name={card.nombre} link={card.link} />
-              </div>
-            );
-          })}
+          {
+            cardData != [] ?
+            cardData.map((card) => {
+              return (
+                <div className="col">
+                  <Card name={card.nombre} link={card.link} />
+                </div>
+              );
+            })
+            : 
+            <div className="col pt-3">
+              <p className="small text-muted"><em>Ups... Parece que aún no hay nadie.</em></p>
+            </div>
+          }
         </div>
       </div>
     </>

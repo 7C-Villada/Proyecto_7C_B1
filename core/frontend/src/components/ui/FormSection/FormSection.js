@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import background from "../../../fotos/mountain.jpg";
+import background from "../../../fotos/IMG_4243.JPG";
 
 const Background = styled.div`
-  width: 100%;
-  height: 80vh;
-  background: url(${background});
+  //width: 100%;
+  //height: 80vh;
+  background-image: url(${background});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const FormH1 = styled.h1`

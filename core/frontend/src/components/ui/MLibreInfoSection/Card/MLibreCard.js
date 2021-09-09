@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import MLibreLogo from "../static/mercado-libre-logo.png";
+import MLibreLogo from "../static/logoML.jpeg";
 
 const MLCard = styled.div.attrs({
   className:
@@ -25,19 +25,18 @@ const MLCard = styled.div.attrs({
 `;
 
 const Card = (props) => {
-  const mlibreRedirect = () => {
-    window.location.href = props.link;
-  };
 
   return (
     <>
-      <MLCard onClick={mlibreRedirect}>
-        <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-          <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-            {props.name}
-          </h2>
-        </div>
-      </MLCard>
+      <a href={props.link} className="text-decoration-none">
+        <MLCard >
+          <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+              {props.name}
+            </h2>
+          </div>
+        </MLCard>
+      </a>
     </>
   );
 };
