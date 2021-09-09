@@ -12,9 +12,9 @@ export const Card = styled.div.attrs({
   className: "card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
 })`
   // background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(${(props) => props.bg});
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center center;
+  // background-size: cover;
   border-radius: 1rem;
   border-color: white;
   transition: transform .1s; 
@@ -36,9 +36,10 @@ const QuienesSomos = () => {
   return (
     <>
       <div className="container px-4 py-5" id="custom-cards">
+        <Header>¿Quiénes Somos?</Header>
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
           <div className="col">
-            <Card >
+            <Card>
               <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
                 <img src={Vision}/>
                 <div className="text">
@@ -47,13 +48,10 @@ const QuienesSomos = () => {
                   </h2>
                   <p class="animate-text">Conocer los recursos naturales. Entender los procesos del ambiente. Aprender sobre bosque nativo.</p>
                 </div>
-                
               </div>
             </Card>
           </div>
-        </div>
 
-        <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
           <div className="col">
             <Card >
               <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
@@ -68,8 +66,7 @@ const QuienesSomos = () => {
               </div>
             </Card>
           </div>
-        </div>
-        <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+
           <div className="col">
             <Card >
               <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
