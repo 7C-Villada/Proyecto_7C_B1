@@ -6,7 +6,6 @@ import Valores from "./images/valores.png";
 import logo from '../Navbar/Logo.png';
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-//import imgCard1 from '../static/unsplash-photo-1.jpg';
 
 export const Card = styled.div.attrs({
   className: "card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
@@ -26,8 +25,8 @@ export const Card = styled.div.attrs({
   }
 `;
 
-export const Header = styled.h2.attrs({
-  className: "pb-2 border-bottom fw-bold"
+export const Header = styled.h1.attrs({
+  className: "display-4 border-bottom fw-bold"
 })`
   color: rgb(62,35,7);
 `;
@@ -43,10 +42,10 @@ const QuienesSomos = () => {
               <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
                 <img src={Vision}/>
                 <div className="text">
-                  <h2 className="mb-4 display-6 lh-1 fw-bold">
+                  <h2 className="mb-2 display-6 lh-1 fw-bold">
                     Nuestra Visión
                   </h2>
-                  <p class="animate-text">Conocer los recursos naturales. Entender los procesos del ambiente. Aprender sobre bosque nativo.</p>
+                  <p class="animate-text small">Ver jóvenes comprometidos con una sociedad sustentable, que ejerzan sus derechos a vivir en libertad, equilibrio y armonía.</p>
                 </div>
               </div>
             </Card>
@@ -57,10 +56,10 @@ const QuienesSomos = () => {
               <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
                 <img src={Mision}/>
                 <div className="text">
-                  <h2 className="mb-4 display-6 lh-1 fw-bold">
+                  <h2 className="mb-2 display-6 lh-1 fw-bold">
                     Nuestra Misión
                   </h2>
-                  <p class="animate-text">Conocer los recursos naturales. Entender los procesos del ambiente. Aprender sobre bosque nativo.</p>
+                  <p class="animate-text small">Educar en valores a través del aprender haciendo, aprender jugando y aprender experimentando en espacios naturales.</p>
                 </div>
                 
               </div>
@@ -71,11 +70,11 @@ const QuienesSomos = () => {
             <Card >
               <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
                 <img src={Valores}/>
-                <div className="text">
-                  <h2 className="mb-4 display-6 lh-1 fw-bold">
+                <div className="text"> 
+                  <h2 className="mb-2 display-6 lh-1 fw-bold">
                     Nuestros Valores
                   </h2>
-                  <p class="animate-text">Conocer los recursos naturales. Entender los procesos del ambiente. Aprender sobre bosque nativo.</p>
+                  <p class="animate-text small">El amor y el cuidado de la naturaleza. Generosidad con el saber. Respeto por los otros. Coherencia entre el decir y el hacer. Inclusión.</p>
                 </div>
                 
               </div>
