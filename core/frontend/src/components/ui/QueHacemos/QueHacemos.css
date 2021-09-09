@@ -146,11 +146,11 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   opacity:1;
 }
 
-.quehacemos .tile:hover span
+/* .quehacemos .tile:hover span
 {
   opacity:1;
   transform:translateY(0px);
-}
+} */
 
 @media screen and (max-width: 956px){
 	.quehacemos {

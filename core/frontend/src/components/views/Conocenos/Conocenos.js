@@ -7,8 +7,8 @@ const Conocenos = () => {
   return (
     <>
       <QuienesSomos/>
-      <QueHacemos/> 
-      <ComoHacemos/>      
+      {/* <QueHacemos/> 
+      <ComoHacemos/>       */}
     </>
   );
 };
