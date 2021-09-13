@@ -34,7 +34,7 @@ export const Header = styled.h1.attrs({
 const QuienesSomos = () => {
   return (
     <>
-      <div className="container px-4 py-5" id="custom-cards">
+      <div className="container px-4 pt-5" id="custom-cards">
         <Header>¿Quiénes Somos?</Header>
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
           <div className="col">

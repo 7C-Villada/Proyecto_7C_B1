@@ -32,18 +32,18 @@ export const Header = styled.h1.attrs({
 
 const QueHacemos = () => {
   return (
-    <div className="container px-4 py-5" id="custom-cards">
-    <Header>¿Quiénes Somos?</Header>
+    <div className="container px-4 pt-5" id="custom-cards">
+    <Header>¿Qué Hacemos?</Header>
     <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
       <div className="col">
         <Card>
           <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
             <img src={Educacion}/>
             <div className="text">
-              <h2 className="mb-4 display-6 lh-1 fw-bold">
-                Nuestra Visión
+              <h2 className="mb-2 display-6 lh-1 fw-bold">
+                Educación
               </h2>
-              <p class="animate-text">Ver jóvenes comprometidos con una sociedad sustentable, que ejerzan sus derechos a vivir en libertad, equilibrio y armonía.</p>
+              <p class="animate-text small">Conocer los recursos naturales. Entender los procesos del ambiente. Aprender sobre bosque nativo.</p>
             </div>
           </div>
         </Card>
@@ -54,10 +54,10 @@ const QueHacemos = () => {
           <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
             <img src={Ambiente}/>
             <div className="text">
-              <h2 className="mb-4 display-6 lh-1 fw-bold">
-                Nuestra Misión
+              <h2 className="mb-2 display-6 lh-1 fw-bold">
+                Ambiente
               </h2>
-              <p class="animate-text">Educar en valores a través del aprender haciendo, aprender jugando y aprender experimentando en espacios naturales.</p>
+              <p class="animate-text small">Identificar los recursos disponibles. Respetar la naturaleza. Reconocer el bosque de nuestra región.</p>
             </div>
             
           </div>
@@ -69,10 +69,10 @@ const QueHacemos = () => {
           <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
             <img src={Sustentabilidad}/>
             <div className="text">
-              <h2 className="mb-4 display-6 lh-1 fw-bold">
-                Nuestros Valores
+              <h2 className="mb-2 display-6 lh-1 fw-bold">
+                Sustentabilidad
               </h2>
-              <p class="animate-text">El amor y el cuidado de la naturaleza. Generosidad con el saber. Respeto por los otros. Coherencia entre el decir y el hacer. Inclusión.</p>
+              <p class="animate-text small">Utilizar racionalmente los recursos. Vivir en armonía con el ambiente. Restaurar el bosque y vivir en equilibrio con él.</p>
             </div>
             
           </div>
