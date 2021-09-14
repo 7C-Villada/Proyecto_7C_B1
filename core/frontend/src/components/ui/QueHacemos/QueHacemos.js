@@ -1,8 +1,8 @@
 import React from "react";
 import "./QueHacemos.css";
-import Educacion from "./images/educacion.jpeg";
-import Ambiente from "./images/ambiente.jpg";
-import Sustentabilidad from "./images/sustentabilidad.jpeg";
+import Educacion from "./images/educacion.jpg";
+import Ambiente from "./images/ambiente.JPG";
+import Sustentabilidad from "./images/sustentabilidad.jpg";
 import styled from "styled-components";
 
 
@@ -30,6 +30,30 @@ export const Header = styled.h1.attrs({
   color: rgb(62,35,7);
 `;
 
+export const Content = styled.p.attrs({
+  className: "animate-text small"
+})`
+
+  @media screen and (max-width: 977px) {
+    font-size: 1.5em !important;
+  }
+  @media screen and (max-width: 539px) {
+    font-size: .875em !important;
+  }
+`;
+
+export const Title = styled.h2.attrs({
+  className: "mb-2 display-6 lh-1 fw-bold"
+})`
+
+  @media screen and (max-width: 977px) {
+    font-size: 4em !important;
+  }
+  @media screen and (max-width: 539px) {
+    font-size: 1.5em !important;
+  }
+`;
+
 const QueHacemos = () => {
   return (
     <div className="container px-4 pt-5" id="custom-cards">
@@ -40,10 +64,10 @@ const QueHacemos = () => {
           <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
             <img src={Educacion}/>
             <div className="text">
-              <h2 className="mb-2 display-6 lh-1 fw-bold">
+              <Title>
                 Educación
-              </h2>
-              <p class="animate-text small">Conocer los recursos naturales. Entender los procesos del ambiente. Aprender sobre bosque nativo.</p>
+              </Title>
+              <Content>Conocer los recursos naturales. Entender los procesos del ambiente. Aprender sobre bosque nativo.</Content>
             </div>
           </div>
         </Card>
@@ -54,10 +78,10 @@ const QueHacemos = () => {
           <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
             <img src={Ambiente}/>
             <div className="text">
-              <h2 className="mb-2 display-6 lh-1 fw-bold">
+              <Title>
                 Ambiente
-              </h2>
-              <p class="animate-text small">Identificar los recursos disponibles. Respetar la naturaleza. Reconocer el bosque de nuestra región.</p>
+              </Title>
+              <Content>Identificar los recursos disponibles. Respetar la naturaleza. Reconocer el bosque de nuestra región.</Content>
             </div>
             
           </div>
@@ -69,10 +93,10 @@ const QueHacemos = () => {
           <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
             <img src={Sustentabilidad}/>
             <div className="text">
-              <h2 className="mb-2 display-6 lh-1 fw-bold">
+              <Title>
                 Sustentabilidad
-              </h2>
-              <p class="animate-text small">Utilizar racionalmente los recursos. Vivir en armonía con el ambiente. Restaurar el bosque y vivir en equilibrio con él.</p>
+              </Title>
+              <Content>Utilizar racionalmente los recursos. Vivir en armonía con el ambiente. Restaurar el bosque y vivir en equilibrio con él.</Content>
             </div>
             
           </div>

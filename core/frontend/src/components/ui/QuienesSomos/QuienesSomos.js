@@ -2,7 +2,7 @@ import React from "react";
 import "./QuienesSomos.css";
 import Mision from "./images/mision.jpg";
 import Vision from "./images/vision.jpg";
-import Valores from "./images/valores.png";
+import Valores from "./images/valores.jpg";
 import logo from '../Navbar/Logo.png';
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -31,6 +31,30 @@ export const Header = styled.h1.attrs({
   color: rgb(62,35,7);
 `;
 
+export const Content = styled.p.attrs({
+  className: "animate-text small"
+})`
+
+  @media screen and (max-width: 977px) {
+    font-size: 1.5em !important;
+  }
+  @media screen and (max-width: 539px) {
+    font-size: .875em !important;
+  }
+`;
+
+export const Title = styled.h2.attrs({
+  className: "mb-2 display-6 lh-1 fw-bold"
+})`
+
+  @media screen and (max-width: 977px) {
+    font-size: 4em !important;
+  }
+  @media screen and (max-width: 539px) {
+    font-size: 1.5em !important;
+  }
+`;
+
 const QuienesSomos = () => {
   return (
     <>
@@ -42,10 +66,10 @@ const QuienesSomos = () => {
               <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
                 <img src={Vision}/>
                 <div className="text">
-                  <h2 className="mb-2 display-6 lh-1 fw-bold">
-                    Nuestra Visión
-                  </h2>
-                  <p class="animate-text small">Ver jóvenes comprometidos con una sociedad sustentable, que ejerzan sus derechos a vivir en libertad, equilibrio y armonía.</p>
+                  <Title>
+                    Visión
+                  </Title>
+                  <Content>Ver jóvenes comprometidos con una sociedad sustentable, que ejerzan sus derechos a vivir en libertad, equilibrio y armonía.</Content>
                 </div>
               </div>
             </Card>
@@ -56,10 +80,10 @@ const QuienesSomos = () => {
               <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
                 <img src={Mision}/>
                 <div className="text">
-                  <h2 className="mb-2 display-6 lh-1 fw-bold">
-                    Nuestra Misión
-                  </h2>
-                  <p class="animate-text small">Educar en valores a través del aprender haciendo, aprender jugando y aprender experimentando en espacios naturales.</p>
+                  <Title>
+                    Misión
+                  </Title>
+                  <Content>Educar en valores a través del aprender haciendo, aprender jugando y aprender experimentando en espacios naturales.</Content>
                 </div>
                 
               </div>
@@ -71,10 +95,10 @@ const QuienesSomos = () => {
               <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
                 <img src={Valores}/>
                 <div className="text"> 
-                  <h2 className="mb-2 display-6 lh-1 fw-bold">
-                    Nuestros Valores
-                  </h2>
-                  <p class="animate-text small">El amor y el cuidado de la naturaleza. Generosidad con el saber. Respeto por los otros. Coherencia entre el decir y el hacer. Inclusión.</p>
+                  <Title>
+                    Valores
+                  </Title>
+                  <Content>El amor y el cuidado de la naturaleza. Generosidad con el saber. Respeto por los otros. Coherencia entre el decir y el hacer. Inclusión.</Content>
                 </div>
                 
               </div>
