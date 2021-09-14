@@ -56,54 +56,56 @@ export const Title = styled.h2.attrs({
 
 const QueHacemos = () => {
   return (
-    <div className="container px-4 pt-5" id="custom-cards">
-    <Header>¿Qué Hacemos?</Header>
-    <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-      <div className="col">
-        <Card>
-          <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
-            <img src={Educacion}/>
-            <div className="text">
-              <Title>
-                Educación
-              </Title>
-              <Content>Conocer los recursos naturales. Entender los procesos del ambiente. Aprender sobre bosque nativo.</Content>
+    <div className="container pt-3" id={'que_hacemos'}>
+      <div className="container px-4 pt-5" id="custom-cards">
+      <Header>¿Qué Hacemos?</Header>
+      <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div className="col">
+          <Card>
+            <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
+              <img src={Educacion}/>
+              <div className="text">
+                <Title>
+                  Educación
+                </Title>
+                <Content>Conocer los recursos naturales. Entender los procesos del ambiente. Aprender sobre bosque nativo.</Content>
+              </div>
             </div>
-          </div>
-        </Card>
-      </div>
+          </Card>
+        </div>
 
-      <div className="col">
-        <Card >
-          <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
-            <img src={Ambiente}/>
-            <div className="text">
-              <Title>
-                Ambiente
-              </Title>
-              <Content>Identificar los recursos disponibles. Respetar la naturaleza. Reconocer el bosque de nuestra región.</Content>
+        <div className="col">
+          <Card >
+            <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
+              <img src={Ambiente}/>
+              <div className="text">
+                <Title>
+                  Ambiente
+                </Title>
+                <Content>Identificar los recursos disponibles. Respetar la naturaleza. Reconocer el bosque de nuestra región.</Content>
+              </div>
+              
             </div>
-            
-          </div>
-        </Card>
-      </div>
+          </Card>
+        </div>
 
-      <div className="col">
-        <Card >
-          <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
-            <img src={Sustentabilidad}/>
-            <div className="text">
-              <Title>
-                Sustentabilidad
-              </Title>
-              <Content>Utilizar racionalmente los recursos. Vivir en armonía con el ambiente. Restaurar el bosque y vivir en equilibrio con él.</Content>
+        <div className="col">
+          <Card >
+            <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
+              <img src={Sustentabilidad}/>
+              <div className="text">
+                <Title>
+                  Sustentabilidad
+                </Title>
+                <Content>Utilizar racionalmente los recursos. Vivir en armonía con el ambiente. Restaurar el bosque y vivir en equilibrio con él.</Content>
+              </div>
+              
             </div>
-            
-          </div>
-        </Card>
+          </Card>
+        </div>
       </div>
     </div>
-  </div>
+    </div>
   );
 };
 

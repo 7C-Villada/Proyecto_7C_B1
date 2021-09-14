@@ -58,51 +58,53 @@ export const Title = styled.h2.attrs({
 const QuienesSomos = () => {
   return (
     <>
-      <div className="container px-4 pt-5" id="custom-cards">
-        <Header>¿Quiénes Somos?</Header>
-        <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-          <div className="col">
-            <Card>
-              <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
-                <img src={Vision}/>
-                <div className="text">
-                  <Title>
-                    Visión
-                  </Title>
-                  <Content>Ver jóvenes comprometidos con una sociedad sustentable, que ejerzan sus derechos a vivir en libertad, equilibrio y armonía.</Content>
+      <div className="container pt-3" id={'quienes_somos'}>
+        <div className="container px-4 pt-5" >
+          <Header>¿Quiénes Somos?</Header>
+          <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div className="col">
+              <Card>
+                <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
+                  <img src={Vision}/>
+                  <div className="text">
+                    <Title>
+                      Visión
+                    </Title>
+                    <Content>Ver jóvenes comprometidos con una sociedad sustentable, que ejerzan sus derechos a vivir en libertad, equilibrio y armonía.</Content>
+                  </div>
                 </div>
-              </div>
-            </Card>
-          </div>
+              </Card>
+            </div>
 
-          <div className="col">
-            <Card >
-              <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
-                <img src={Mision}/>
-                <div className="text">
-                  <Title>
-                    Misión
-                  </Title>
-                  <Content>Educar en valores a través del aprender haciendo, aprender jugando y aprender experimentando en espacios naturales.</Content>
+            <div className="col">
+              <Card >
+                <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
+                  <img src={Mision}/>
+                  <div className="text">
+                    <Title>
+                      Misión
+                    </Title>
+                    <Content>Educar en valores a través del aprender haciendo, aprender jugando y aprender experimentando en espacios naturales.</Content>
+                  </div>
+                  
                 </div>
-                
-              </div>
-            </Card>
-          </div>
+              </Card>
+            </div>
 
-          <div className="col">
-            <Card >
-              <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
-                <img src={Valores}/>
-                <div className="text"> 
-                  <Title>
-                    Valores
-                  </Title>
-                  <Content>El amor y el cuidado de la naturaleza. Generosidad con el saber. Respeto por los otros. Coherencia entre el decir y el hacer. Inclusión.</Content>
+            <div className="col">
+              <Card >
+                <div className="tile d-flex flex-column h-100 text-white text-shadow-1">
+                  <img src={Valores}/>
+                  <div className="text"> 
+                    <Title>
+                      Valores
+                    </Title>
+                    <Content>El amor y el cuidado de la naturaleza. Generosidad con el saber. Respeto por los otros. Coherencia entre el decir y el hacer. Inclusión.</Content>
+                  </div>
+                  
                 </div>
-                
-              </div>
-            </Card>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
