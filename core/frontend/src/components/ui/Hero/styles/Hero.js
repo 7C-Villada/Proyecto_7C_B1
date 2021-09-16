@@ -22,10 +22,11 @@ export const H1Styled = styled.h1.attrs({
   }
 `;
 
-export const ButtonFormaParte = styled.button.attrs({
+export const ButtonFormaParte = styled.button.attrs(props =>({
   className: "btn px-4 gap-3 rounded-pill",
   type: "button",
-})`
+  onClick: props.function,
+}))`
   color: #f8f0bb !important;
   font-size: 1.6rem;
   background-color: #49a651;

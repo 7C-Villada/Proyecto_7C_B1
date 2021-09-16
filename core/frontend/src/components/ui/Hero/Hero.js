@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 import {
   H1Styled,
@@ -11,6 +12,19 @@ import {
 } from "./styles/Hero";
 
 const Hero = () => {
+
+  const getFormUrl = () => {
+    axios.get("/api/forma-parte").then((response) => {
+      let link = response.data.link
+      if (link.includes('https://')) {
+        window.open(link, "_blank");
+      } else {
+        link = 'https://' + link;
+        window.open(link, "_blank");
+      }
+    });
+  };
+
   return (
     <>
       {/* <IMGBackground> */}
@@ -28,7 +42,7 @@ const Hero = () => {
               medio ambiente.
             </PDescription>
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <ButtonFormaParte>Formá Parte</ButtonFormaParte>
+              <ButtonFormaParte function={getFormUrl}>Formá Parte</ButtonFormaParte>
               {/* <button
                   type="button"
                   className="btn btn-outline-secondary btn-lg px-4"
