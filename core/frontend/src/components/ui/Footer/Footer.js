@@ -55,8 +55,8 @@ const Footer = () => {
             {/* <!-- Grid container --> */}
 
             {/* <!-- Copyright --> */}
-            <div className="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}} >
-                © 2020 Copyright&nbsp;
+            <div className="text-center p-3 small" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}} >
+                © 2021 Copyright - Fundación Aprender Haciendo - Diseñado por&nbsp;
                 <a className="text-white" href="https://www.itsv.edu.ar/">ITS Villada</a>
             </div>
             {/* <!-- Copyright --> */}

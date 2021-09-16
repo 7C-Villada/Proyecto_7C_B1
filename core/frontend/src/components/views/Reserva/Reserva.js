@@ -1,9 +1,10 @@
 import React from "react";
+import ReservaHeroSection from "../../ui/ReservaHeroSection/ReservaHeroSection";
 
 const Reserva = () => {
   return (
     <>
-        <h1>Reserva</h1>
+      <ReservaHeroSection></ReservaHeroSection>
     </>
   );
 };

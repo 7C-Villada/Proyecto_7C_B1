@@ -83,7 +83,7 @@ const FormSection = () => {
           className="container row align-items-center mx-auto"
           style={{ height: "80vh", margin: "0" }}
         >
-          <div className="shadow card py-5">
+          <div className="rounded-3 border shadow-lg card py-5">
             <div className="col text-center">
               <FormH1>Doná para ayudarnos</FormH1>
               <FormP>
