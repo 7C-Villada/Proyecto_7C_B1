@@ -40,8 +40,16 @@ const ReservaHeroSection = () => {
       <div className="container col-xxl-8 px-4 py-5">
         <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
           <div className="col-10 col-sm-8 col-lg-6">
-            <img src={Pic} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"></img>
-            {/* <iframe className="d-block mx-lg-auto" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13659.81072887819!2d-64.4520141!3d-31.1388288!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3b107f754f22dba9!2sC%C3%B3rdoba%20Gilwell%20Park!5e0!3m2!1ses!2sar!4v1631811330728!5m2!1ses!2sar" width="600" height="537" style={{border: "0",}} allowfullscreen="" loading="lazy"></iframe> */}
+            {/* <img src={Pic} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"></img> */}
+            {/* <div className="container py-5"> */}
+              {/* <div className="row py-auto"> */}
+                <div className="embed-responsive embed-responsive-16by9">
+                  <div className="embed-responsive-item">
+                    <div style={{width: "100%"}}><iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=C%C3%B3rdoba%20Gilwell%20Park+(C%C3%B3rdoba%20Gilwell%20Park)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+                  </div>
+                </div>
+              {/* </div> */}
+            {/* </div> */}
           </div>
           <div className="col-lg-6">
             <Header>Córdoba Gilwell Park</Header>
