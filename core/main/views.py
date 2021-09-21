@@ -43,6 +43,7 @@ def apiOverview(request):
         'Taller por id':'api/taller/<str:pk>/',
         'Historia por id':'api/historia/<str:pk>/',
         'Album por id':'api/image-album/<str:pk>/',
+        'Ultimos proyectos':'api/ultimosProyectos/',
     }
 
     return Response(api_urls)
@@ -425,3 +426,14 @@ def montoDonacionMercadoPago(request, precio):
 
     except ObjectDoesNotExist:
         return not_found()
+
+@api_view(['GET'])
+def ultimosProyectos(request):
+
+    try:
+        ProyectoObjeto = Proyecto.objects.all().order_by('-pk')[:3]
+        serializer = ProyectoSerializerList(ProyectoObjeto, many=True)
+        return Response(serializer.data)
+
+    except ObjectDoesNotExist:
+        return not_found() 
