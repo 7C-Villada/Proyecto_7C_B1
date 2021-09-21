@@ -38,19 +38,7 @@ const ReservaHeroSection = () => {
   return (
     <>
       <div className="container col-xxl-8 px-4 py-5">
-        <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div className="col-10 col-sm-8 col-lg-6">
-            {/* <img src={Pic} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"></img> */}
-            {/* <div className="container py-5"> */}
-              {/* <div className="row py-auto"> */}
-                <div className="embed-responsive embed-responsive-16by9">
-                  <div className="embed-responsive-item">
-                    <div style={{width: "100%"}}><iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=C%C3%B3rdoba%20Gilwell%20Park+(C%C3%B3rdoba%20Gilwell%20Park)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
-                  </div>
-                </div>
-              {/* </div> */}
-            {/* </div> */}
-          </div>
+        <div className="row align-items-center g-5">
           <div className="col-lg-6">
             <Header>Córdoba Gilwell Park</Header>
             <p className="lead">Córdoba Gillwell Park, es un campo virgen de 70 hectáreas, ubicado en Casa Grande, Valle Hermoso, provincia de Córdoba. Un arroyo cruza toda la quebrada formando ollitas de agua cristalina en diferentes sectores. Hay una gran variedad de flora y fauna autóctona. Es un lugar de las sierras destinado a la realización de campamentos scouts, educativos y actividades ecosutentables.</p>
@@ -58,13 +46,13 @@ const ReservaHeroSection = () => {
               <SocialMediaButton href={"https://www.facebook.com/CordobaGilwellPark/"} facebook>
                 <div className="row align-items-center gx-3">
                   {/* <i className="col fab fa-facebook-f"></i> */}
-                  <span className="col align-middle  small">Facebook</span>
+                  <span className="col align-middle small">Facebook</span>
                 </div>
               </SocialMediaButton>
               <SocialMediaButton href={"mailto:cordobagilwellpark@gmail.com"} gmail>
                 <div className="row align-items-center gx-3">
                   {/* <i className="col fab fa-facebook-f"></i> */}
-                  <span className="col align-middle  small">E-Mail</span>
+                  <span className="col align-middle small">E-Mail</span>
                 </div>
               </SocialMediaButton>
               {/* <SocialMediaButton href={"https://www.facebook.com/CordobaGilwellPark/"}>
@@ -73,6 +61,13 @@ const ReservaHeroSection = () => {
                   <p className="small" style={{display:'inline'}}>E-Mail</p>
                 </div>
               </SocialMediaButton> */}
+            </div>
+          </div>
+          <div className="col">
+            <div className="embed-responsive embed-responsive-16by9">
+              <div className="embed-responsive-item">
+                <div style={{width: "100%"}}><iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=C%C3%B3rdoba%20Gilwell%20Park+(C%C3%B3rdoba%20Gilwell%20Park)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+              </div>
             </div>
           </div>
         </div>
