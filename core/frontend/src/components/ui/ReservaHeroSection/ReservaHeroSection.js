@@ -66,7 +66,7 @@ const ReservaHeroSection = () => {
           <div className="col">
             <div className="embed-responsive embed-responsive-16by9">
               <div className="embed-responsive-item">
-                <div style={{width: "100%"}}><iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=C%C3%B3rdoba%20Gilwell%20Park+(C%C3%B3rdoba%20Gilwell%20Park)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+                <div style={{width: "100%"}}><iframe style={{boxShadow:"0 .5rem 1rem rgba(0,0,0,.35)"}} width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=C%C3%B3rdoba%20Gilwell%20Park+(C%C3%B3rdoba%20Gilwell%20Park)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
               </div>
             </div>
           </div>
