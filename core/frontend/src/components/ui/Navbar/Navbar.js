@@ -10,8 +10,16 @@ import {
   NavButtonDropdown,
   UlDropdownMenu,
 } from "./styles/Navbar";
+import { useHistory } from "react-router";
 
 const Navbar = () => {
+  let history = useHistory();
+
+  const handleRefreshPage = () => {
+    history.push('/');
+    window.location.reload();
+  }
+
   return (
     <>
       <NavbarStyle>
@@ -37,7 +45,7 @@ const Navbar = () => {
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
                 <Link to="/">
-                  <NavButton>Inicio</NavButton>
+                  <NavButton onClick={handleRefreshPage}>Inicio</NavButton>
                 </Link>
               </li>
               <li class="nav-item dropdown">

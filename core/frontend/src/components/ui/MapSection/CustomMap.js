@@ -12,22 +12,28 @@ const CustomMap = () => {
   ];
 
   useEffect(() => {
-    var mymap = L.map("mapid", {
-      minZoom: minZoom,
-      maxZoom: maxZoom,
-    });
-
-    var rc = new L.RasterCoords(mymap, img);
-    mymap.setView(rc.unproject([1589, 1447]), 3);
-
-    L.tileLayer(tiles, {
-      noWrap: true,
-      attribution:
-        'Map <a href="https://commons.wikimedia.org/wiki/' +
-        'File:Karta_%C3%B6ver_Europa,_1672_-_Skoklosters_slott_-_95177.tif">' +
-        "Karta över Europa, 1672 - Skoklosters</a> under " +
-        '<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>',
-    }).addTo(mymap);
+    var container = L.DomUtil.get('map');
+    console.log(container);
+    if(container == null){
+      console.log('cacacacacaacaca');
+      
+      var mymap = L.map("mapid", {
+        minZoom: minZoom,
+        maxZoom: maxZoom,
+      });
+  
+      var rc = new L.RasterCoords(mymap, img);
+      mymap.setView(rc.unproject([1589, 1447]), 3);
+  
+      L.tileLayer(tiles, {
+        noWrap: true,
+        attribution:
+          'Map <a href="https://commons.wikimedia.org/wiki/' +
+          'File:Karta_%C3%B6ver_Europa,_1672_-_Skoklosters_slott_-_95177.tif">' +
+          "Karta över Europa, 1672 - Skoklosters</a> under " +
+          '<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>',
+      }).addTo(mymap);
+    }
   });
 
   return (
