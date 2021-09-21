@@ -15,12 +15,17 @@ const Hero = () => {
 
   const getFormUrl = () => {
     axios.get("/api/forma-parte").then((response) => {
-      let link = response.data.link
-      if (link.includes('https://')) {
-        window.open(link, "_blank");
+      let link = response.data.link;
+      let statusCode = response.status;
+      if (statusCode === 200) {
+        if (link.includes('https://')) {
+          window.open(link, "_blank");
+        } else {
+          link = 'https://' + link;
+          window.open(link, "_blank");
+        }
       } else {
-        link = 'https://' + link;
-        window.open(link, "_blank");
+        console.log('No link provided ;)')
       }
     });
   };
