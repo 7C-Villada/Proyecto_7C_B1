@@ -31,7 +31,7 @@ const Footer = () => {
 
             <FooterStyled>
             {/* <!-- Grid container --> */}
-            <div className="container p-4 pb-0 mt-5">
+            <div className="container p-4 pb-0">
                 {/* <!-- Section: Social media --> */}
                 <section className="mb-4">
                 <SocialMediaButton href={"https://www.instagram.com/fundacionaprenderhaciendo/?igshid=1b7iyx92lmbre"}>
