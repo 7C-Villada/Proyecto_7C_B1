@@ -43,7 +43,7 @@ def apiOverview(request):
         'Taller por id':'api/taller/<str:pk>/',
         'Historia por id':'api/historia/<str:pk>/',
         'Album por id':'api/image-album/<str:pk>/',
-        'Ultimos proyectos':'api/ultimosProyectos/',
+        'Ultimos proyectos':'api/ultimos-proyectos/',
     }
 
     return Response(api_urls)
