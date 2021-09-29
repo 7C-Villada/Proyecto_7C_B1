@@ -82,6 +82,7 @@ class Historia(models.Model): # Las historias serán parte del Libro de Oro
     title = models.CharField(max_length = 75, null = False, default = 'Título de la Historia', verbose_name = 'Titulo')
     content = models.TextField(null = False, verbose_name = 'Contenido')
     imageAlbum =  models.ForeignKey(ImageAlbum, on_delete = models.CASCADE, verbose_name = 'Album de imagenes')
+    date = models.DateField(null = False, verbose_name = 'Fecha')
 
     class Meta:
         verbose_name = 'Historia'

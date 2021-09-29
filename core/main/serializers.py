@@ -87,7 +87,9 @@ class HistoriaSerializerDetail(serializers.ModelSerializer):
 
 class HistoriaSerializerList(serializers.ModelSerializer):
 
+    date = serializers.DateField(format="%d-%m-%Y")
+
     class Meta:
         model = Historia
-        exclude = ['imageAlbum']
+        fields = '__all__'
 

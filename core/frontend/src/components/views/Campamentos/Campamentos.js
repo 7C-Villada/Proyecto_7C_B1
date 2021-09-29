@@ -1,10 +1,10 @@
 import React from "react";
-import ReservaHeroSection from "../../ui/ReservaHeroSection/ReservaHeroSection";
+import CampamentosSection from "../../ui/CampamentosSection/CampamentosSection";
 
 const Campamentos = () => {
   return (
     <>
-      <ReservaHeroSection></ReservaHeroSection>
+      <CampamentosSection></CampamentosSection>
     </>
   );
 };

@@ -49,8 +49,6 @@ const ReservaHeroSection = () => {
   return (
     <>
     <Background>
-      {/* <div className="container row align-items-center mx-auto" style={{ height: "80vh", margin: "0" }}>
-        <div> */}
           <div className="container col-xxl-8 px-4 py-4 rounded-3 border shadow-lg card">
             <div className="row align-items-center g-5">
               <div className="col-lg-6">
@@ -59,22 +57,14 @@ const ReservaHeroSection = () => {
                 <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                   <SocialMediaButton href={"https://www.facebook.com/CordobaGilwellPark/"} facebook>
                     <div className="row align-items-center gx-3">
-                      {/* <i className="col fab fa-facebook-f"></i> */}
                       <span className="col align-middle small">Facebook</span>
                     </div>
                   </SocialMediaButton>
                   <SocialMediaButton href={"mailto:cordobagilwellpark@gmail.com"} gmail>
                     <div className="row align-items-center gx-3">
-                      {/* <i className="col fab fa-facebook-f"></i> */}
                       <span className="col align-middle small">E-Mail</span>
                     </div>
                   </SocialMediaButton>
-                  {/* <SocialMediaButton href={"https://www.facebook.com/CordobaGilwellPark/"}>
-                    <div className="d-flex align-items-center gx-3">
-                      <i className="fas fa-envelope"></i>
-                      <p className="small" style={{display:'inline'}}>E-Mail</p>
-                    </div>
-                  </SocialMediaButton> */}
                 </div>
               </div>
               <div className="col">
@@ -86,8 +76,6 @@ const ReservaHeroSection = () => {
               </div>
             </div>
           </div>
-        {/* </div>
-      </div>     */}
     </Background>
     </>
   );

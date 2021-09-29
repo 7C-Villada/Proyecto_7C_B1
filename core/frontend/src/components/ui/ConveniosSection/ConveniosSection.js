@@ -64,12 +64,6 @@ const ConveniosSection = () => {
                         <p className="small text-muted"><em>Ups... Parece que aún no hay nadie.</em></p>
                         </div>
                     }
-                        {/* <div className="carousel-item active">
-                            <img src={foto1} className="d-block w-100" alt="..."></img>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={foto2} className="d-block w-100" alt="..."></img>
-                        </div> */}
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#principalCarousel" data-bs-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
