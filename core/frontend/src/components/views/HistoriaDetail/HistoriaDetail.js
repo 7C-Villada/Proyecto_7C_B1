@@ -21,8 +21,8 @@ export const Header = styled.h2.attrs({
     className: ""
   })`
     margin: 0;
-    text-indent: 2rem;
     text-align: justify;
+    white-space: pre-line;
   `;
 
 export const CarouselImg = styled.img.attrs(props => ({
@@ -61,7 +61,7 @@ const HistoriaDetail = () => {
       .get(endpoint, config)
       .then((response) => {
         setHistoriaData(response.data);
-        console.log(response.data.imageAlbum);
+        console.log(response.data.content);
         axios
         .get("/api/image-album/" + response.data.imageAlbum , config)
         .then((response) => {
@@ -73,6 +73,7 @@ const HistoriaDetail = () => {
       })
       .catch((error) => {
         console.log(error);
+        console.log(error.response.status);
       });
   }, []);
 
@@ -85,7 +86,7 @@ const HistoriaDetail = () => {
         <Date>{historiaData.date}</Date>
       </div>
 
-      <div className="container pt-4 pb-5 px-3 border-top lh-lg">
+      <div className="container pt-4 pb-5 px-3 border-top">
         <Content>
           {historiaData.content}
         </Content>

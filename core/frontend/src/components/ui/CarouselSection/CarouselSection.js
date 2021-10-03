@@ -42,11 +42,11 @@ const CarouselSection = () => {
       <div className="container px-4 py-5">
         <Header>Actividades Recientes</Header>
         <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-indicators">
+          {/* <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
+          </div> */}
           <div className="carousel-inner">
           {
             proyectoData != [] ?
@@ -60,20 +60,20 @@ const CarouselSection = () => {
                 return (
                   <CarouselItem active>
                     <img src={img} className="d-block w-100" alt="..."></img>
-                    <div className="carousel-caption d-none d-md-block">
+                    {/* <div className="carousel-caption d-none d-md-block">
                       <h5>{proyecto.title}</h5>
                       <p>{proyecto.description}</p>
-                    </div>
+                    </div> */}
                   </CarouselItem>
                 );
               } else {
                 return (
                   <CarouselItem>
                     <img src={img} className="d-block w-100" alt="..."></img>
-                    <div className="carousel-caption d-none d-md-block">
+                    {/* <div className="carousel-caption d-none d-md-block">
                       <h5>{proyecto.title}</h5>
                       <p>{proyecto.description}</p>
-                    </div>
+                    </div> */}
                   </CarouselItem>
                 );
               }
