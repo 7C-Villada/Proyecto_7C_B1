@@ -11,6 +11,19 @@ export const Header = styled.h2.attrs({
     margin-bottom: none !important;
   `;
 
+  export const Date = styled.span.attrs({
+    className: "col-md-auto small text-muted"
+  })`
+    white-space:nowrap;
+  `;
+
+  export const Content = styled.p.attrs({
+    className: ""
+  })`
+    margin: 0;
+    text-indent: 2rem;
+    text-align: justify;
+  `;
 
 export const CarouselImg = styled.img.attrs(props => ({
     className: "d-block w-100",
@@ -69,12 +82,13 @@ const HistoriaDetail = () => {
     <div className="container px-4 py-5">
       <div className="row align-items-center">
         <Header>{ historiaData.title }</Header>
-        <em className="col-2 small text-muted">{historiaData.date}</em>
-        {/* <p className="col small text-muted"><em>{historiaData.date}</em></p> */}
+        <Date>{historiaData.date}</Date>
       </div>
 
-      <div className="container pt-4 pb-5 px-3 border-top">
-        {historiaData.content}
+      <div className="container pt-4 pb-5 px-3 border-top lh-lg">
+        <Content>
+          {historiaData.content}
+        </Content>
       </div>
 
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
