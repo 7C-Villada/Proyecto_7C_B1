@@ -15,7 +15,6 @@ const CustomMap = () => {
     var container = L.DomUtil.get('map');
     console.log(container);
     if(container == null){
-      console.log('cacacacacaacaca');
       
       var mymap = L.map("mapid", {
         minZoom: minZoom,

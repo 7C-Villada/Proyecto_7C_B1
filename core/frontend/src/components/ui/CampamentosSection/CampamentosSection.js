@@ -30,6 +30,10 @@ const CampamentosSection = () => {
   const [historiaData, setHistoriaData] = useState([]);
   const [albumData, setAlbumData] = useState([]);
 
+  function randomNumber(min, max) { 
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
   useEffect(() => {
     let config = {
       headers: {
@@ -40,7 +44,16 @@ const CampamentosSection = () => {
       .get("/api/historia/",config)
       .then((response) => {
         setHistoriaData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
+    axios
+      .get("/api/image-album/",config)
+      .then((response) => {
+        setAlbumData(response.data);
+        //console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -49,12 +62,12 @@ const CampamentosSection = () => {
 
   return (
     <>
-      <div class="container py-4">
-        <div class="p-5 mb-4 bg-light rounded-3">
-          <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">Campamentos</h1>
-            <p class="col-md-8 fs-4">Aquí encontrarás alguna de nuestras tantas historias...</p>
-            <button class="btn btn-primary btn-lg" type="button">Example button</button>
+      <div className="container py-4">
+        <div className="p-5 mb-4 rounded-3">
+          <div className="container-fluid py-5">
+            <h1 className="display-5 fw-bold">Campamentos</h1>
+            <p className="col-md-8 fs-4">Aquí encontrarás alguna de nuestras tantas historias...</p>
+            {/* <button className="btn btn-primary btn-lg" type="button">Example button</button> */}
           </div>
         </div>
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
@@ -62,15 +75,29 @@ const CampamentosSection = () => {
           historiaData != [] ?
           historiaData.map((historia) => {
 
+            var storyAlbum;
+            var randNumber;
+            var randomImage;
+
+            for (var album of albumData) 
+            {
+              if (historia.imageAlbum === album.id)
+              {
+                storyAlbum = album;
+                randNumber = randomNumber(0,album.images.length);
+                randomImage = "https://res.cloudinary.com/aprenderhaciendo/" + album.images[randNumber].imagen;
+              }
+            }
+
             return (
               <div className="col">
               <Link to="/conocenos/#como_hacemos" className="text-decoration-none">
-                <Card bg={imgCard3}>
+                <Card bg={randomImage}>
                 <div className="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                     <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{historia.title}</h2>
                     <ul className="d-flex list-unstyled mt-auto">
                     <li className="me-auto">
-                      <img src={logo} alt="¿Cómo lo hacemos?" width="32" height="32" className="rounded-circle border border-white"></img>
+                      <img src={logo} width="32" height="32" className="rounded-circle border border-white"></img>
                     </li>
                     <li className="d-flex align-items-center">
                       <small>{historia.date}</small>

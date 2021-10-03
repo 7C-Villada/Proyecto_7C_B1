@@ -67,6 +67,8 @@ class ImageSerializer(serializers.ModelSerializer):
 
 class ImageAlbumSerializerList(serializers.ModelSerializer):
 
+    images = ImageSerializer(many=True)
+
     class Meta:
         model = ImageAlbum
         fields = '__all__'

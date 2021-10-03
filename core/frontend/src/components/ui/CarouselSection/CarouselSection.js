@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from 'styled-components';
 
-import placeholder1 from "./bg.jpg";
-import placeholder2 from "./bg2.jpg";
-import placeholder3 from "./bg3.jpg";
+import { Header, CarouselImg } from "./style/CarouselSectionStyle";
 
-import { Header, CarouselImg, CarouselItem } from "./style/CarouselSectionStyle";
+export const CarouselItem = styled.div.attrs(props => ({
+  className:  (props.active ? "carousel-item active" : "carousel-item")
+}))`
+  
+  @media screen and (max-width: 754px) {
+    height: 400px;
+  }
+  
+`; 
 
 const CarouselSection = () => {
 
@@ -20,7 +27,6 @@ const CarouselSection = () => {
     axios
       .get("/api/ultimos-proyectos/",config)
       .then((response) => {
-        console.log(response);
         setProyectoData(response.data);
         console.log(proyectoData);
       })
@@ -52,23 +58,23 @@ const CarouselSection = () => {
                 isActive = false;
                 console.log(isActive);
                 return (
-                  <div className="carousel-item active">
+                  <CarouselItem active>
                     <img src={img} className="d-block w-100" alt="..."></img>
                     <div className="carousel-caption d-none d-md-block">
                       <h5>{proyecto.title}</h5>
                       <p>{proyecto.description}</p>
                     </div>
-                  </div>
+                  </CarouselItem>
                 );
               } else {
                 return (
-                  <div className="carousel-item">
+                  <CarouselItem>
                     <img src={img} className="d-block w-100" alt="..."></img>
                     <div className="carousel-caption d-none d-md-block">
                       <h5>{proyecto.title}</h5>
                       <p>{proyecto.description}</p>
                     </div>
-                  </div>
+                  </CarouselItem>
                 );
               }
             })

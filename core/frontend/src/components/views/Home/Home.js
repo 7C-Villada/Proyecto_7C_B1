@@ -20,8 +20,8 @@ const Home = () => {
       <Divider></Divider>
       <CarouselSection></CarouselSection>
       <Divider></Divider>
-      <MapSection />
-      <Divider></Divider>
+      {/* <MapSection />
+      <Divider></Divider> */}
       <ConveniosSection></ConveniosSection>
 
     </>

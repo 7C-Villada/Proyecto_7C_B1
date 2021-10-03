@@ -3,7 +3,6 @@ import { Header, MapDiv } from "./style/MapSectionElements";
 import CustomMap from "./CustomMap";
 
 const MapSection = () => {
-  const tiles = "./tiles/{z}/{x}/{y}.png";
 
   return (
     <>
