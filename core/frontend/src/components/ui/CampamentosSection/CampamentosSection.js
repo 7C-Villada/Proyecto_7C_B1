@@ -25,6 +25,12 @@ export const Card = styled.div.attrs({
   }
 `;
 
+export const Header = styled.h1.attrs({
+  className: "display-5 fw-bold",
+})`
+  color: rgb(62, 35, 7);
+`;
+
 const CampamentosSection = () => {
 
   const [historiaData, setHistoriaData] = useState([]);
@@ -63,14 +69,14 @@ const CampamentosSection = () => {
   return (
     <>
       <div className="container py-4">
-        <div className="p-5 mb-4 rounded-3">
-          <div className="container-fluid py-5">
-            <h1 className="display-5 fw-bold">Campamentos</h1>
+        <div className="rounded-3">
+          <div className="container-fluid pt-4">
+            <Header>Campamentos</Header>
             <p className="col-md-8 fs-4">Aquí encontrarás alguna de nuestras tantas historias...</p>
             {/* <button className="btn btn-primary btn-lg" type="button">Example button</button> */}
           </div>
         </div>
-        <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 pt-3 pb-5 px-3">
         {
           historiaData != [] ?
           historiaData.map((historia) => {
@@ -78,6 +84,7 @@ const CampamentosSection = () => {
             var storyAlbum;
             var randNumber;
             var randomImage;
+            var link;
 
             for (var album of albumData) 
             {
@@ -86,12 +93,13 @@ const CampamentosSection = () => {
                 storyAlbum = album;
                 randNumber = randomNumber(0,album.images.length);
                 randomImage = "https://res.cloudinary.com/aprenderhaciendo/" + album.images[randNumber].imagen;
+                link = "/historia/" + historia.id;
               }
             }
 
             return (
               <div className="col">
-              <Link to="/conocenos/#como_hacemos" className="text-decoration-none">
+              <Link to={link} className="text-decoration-none">
                 <Card bg={randomImage}>
                 <div className="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                     <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{historia.title}</h2>

@@ -83,6 +83,8 @@ class ImageAlbumSerializerDetail(serializers.ModelSerializer):
 
 class HistoriaSerializerDetail(serializers.ModelSerializer):
 
+    date = serializers.DateField(format="%d-%m-%Y")
+
     class Meta:
         model = Historia
         fields = '__all__'
