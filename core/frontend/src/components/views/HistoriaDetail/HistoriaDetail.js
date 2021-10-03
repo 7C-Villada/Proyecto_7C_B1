@@ -25,13 +25,6 @@ export const Header = styled.h2.attrs({
     white-space: pre-line;
   `;
 
-export const CarouselImg = styled.img.attrs(props => ({
-    className: "d-block w-100",
-    src: props.src,
-  }))`
-  `;
-
-
 export const CarouselItem = styled.div.attrs(props => ({
     className:  (props.active ? "carousel-item active" : "carousel-item")
   }))`

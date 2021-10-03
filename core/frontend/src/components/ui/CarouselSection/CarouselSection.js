@@ -2,14 +2,19 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from 'styled-components';
 
-import { Header, CarouselImg } from "./style/CarouselSectionStyle";
+export const Header = styled.h2.attrs({
+  className: "pb-2 border-bottom fw-bold"
+})`
+  color: rgb(62,35,7);
+`;
 
 export const CarouselItem = styled.div.attrs(props => ({
   className:  (props.active ? "carousel-item active" : "carousel-item")
 }))`
+  height: 400px;
   
-  @media screen and (max-width: 754px) {
-    height: 400px;
+  @media screen and (max-width: 768px) {
+    height: 175px;
   }
   
 `; 
@@ -42,11 +47,11 @@ const CarouselSection = () => {
       <div className="container px-4 py-5">
         <Header>Actividades Recientes</Header>
         <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
-          {/* <div className="carousel-indicators">
+          <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div> */}
+          </div>
           <div className="carousel-inner">
           {
             proyectoData != [] ?
@@ -59,21 +64,21 @@ const CarouselSection = () => {
                 console.log(isActive);
                 return (
                   <CarouselItem active>
-                    <img src={img} className="d-block w-100" alt="..."></img>
-                    {/* <div className="carousel-caption d-none d-md-block">
+                    <img src={img} className="w-100" alt="..."></img>
+                    <div className="carousel-caption d-none d-md-block">
                       <h5>{proyecto.title}</h5>
                       <p>{proyecto.description}</p>
-                    </div> */}
+                    </div>
                   </CarouselItem>
                 );
               } else {
                 return (
                   <CarouselItem>
                     <img src={img} className="d-block w-100" alt="..."></img>
-                    {/* <div className="carousel-caption d-none d-md-block">
+                    <div className="carousel-caption d-none d-md-block">
                       <h5>{proyecto.title}</h5>
                       <p>{proyecto.description}</p>
-                    </div> */}
+                    </div>
                   </CarouselItem>
                 );
               }
