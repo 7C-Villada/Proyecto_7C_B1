@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import img from "../../../../fotos/IMG_4243.JPG"
 
 import video from "../../../../videos/video.mp4";
 
@@ -70,8 +71,8 @@ export const HeroBackground = styled.div`
   background: #232a24;
 `;
 
-export const MP4Background = styled.video.attrs({
-  src: video,
+export const Background = styled.img.attrs({
+  src: img,
 })`
   position: absolute;
   top: 0;

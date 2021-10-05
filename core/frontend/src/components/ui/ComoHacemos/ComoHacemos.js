@@ -11,7 +11,7 @@ export const Header = styled.h1.attrs({
 
 const ComoHacemos = () => {
   return (
-    <div className="container pt-3">
+    <div className="container pt-3 mb-5">
       <div className="container px-4 pt-5" id={"como_hacemos"}>
         <Header>¿Cómo lo Hacemos?</Header>
         <div className="container px-4 pt-4">

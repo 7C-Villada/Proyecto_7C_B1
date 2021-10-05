@@ -29,7 +29,7 @@ const CardSection = () => {
             </div>
 
             <div className="col">
-                <Link to="/conocenos/#que_hacemos" className="text-decoration-none">
+                <Link to="/conocenos/#quienes_somos" className="text-decoration-none">
                     <Card bg={imgCard2}>
                     <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                         <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">¿Qué Hacemos?</h2>
@@ -50,7 +50,7 @@ const CardSection = () => {
             </div>
 
             <div className="col">
-                <Link to="/conocenos/#como_hacemos" className="text-decoration-none">
+                <Link to="/conocenos/#quienes_somos" className="text-decoration-none">
                     <Card bg={imgCard3}>
                     <div className="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                         <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">¿Cómo lo hacemos?</h2>

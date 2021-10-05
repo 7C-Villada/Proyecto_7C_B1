@@ -4,9 +4,8 @@ import axios from "axios";
 import {
   H1Styled,
   ButtonFormaParte,
-  MP4Background,
+  Background,
   HeroBackground,
-  IMGBackground,
   PDescription,
   HeroContainer,
 } from "./styles/Hero";
@@ -35,7 +34,7 @@ const Hero = () => {
       {/* <IMGBackground> */}
       <HeroContainer>
         <HeroBackground>
-          <MP4Background autoPlay muted loop></MP4Background>
+          <Background autoPlay muted loop></Background>
         </HeroBackground>
         <div className="col-lg-12 align-self-center">
           <H1Styled primary>Aprender</H1Styled>

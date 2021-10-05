@@ -67,6 +67,8 @@ class ImageSerializer(serializers.ModelSerializer):
 
 class ImageAlbumSerializerList(serializers.ModelSerializer):
 
+    images = ImageSerializer(many=True)
+
     class Meta:
         model = ImageAlbum
         fields = '__all__'
@@ -81,13 +83,17 @@ class ImageAlbumSerializerDetail(serializers.ModelSerializer):
 
 class HistoriaSerializerDetail(serializers.ModelSerializer):
 
+    date = serializers.DateField(format="%d-%m-%Y")
+
     class Meta:
         model = Historia
         fields = '__all__'
 
 class HistoriaSerializerList(serializers.ModelSerializer):
 
+    date = serializers.DateField(format="%d-%m-%Y")
+
     class Meta:
         model = Historia
-        exclude = ['imageAlbum']
+        fields = '__all__'
 
