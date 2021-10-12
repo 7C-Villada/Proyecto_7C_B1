@@ -145,6 +145,16 @@ class FormaParteLink(SingletonModel):
         verbose_name = "Link FormaParte"
         verbose_name_plural = 'Link FormaParte'
 
+class ContactoWhatsapp(SingletonModel):
+    number = models.CharField(max_length = 10, null = False, default = '3511234567', verbose_name = 'número')
+
+    def __str__(self):
+        return "Link FormaParte"
+
+    class Meta:
+        verbose_name = "Número Whatsapp"
+        verbose_name_plural = 'Número Whatsapp'
+
 @receiver(pre_delete, sender=Proyecto)
 def pre_delete_Proyecto(sender, instance, **kwargs):
     cloudinary.uploader.destroy(instance.imagen.public_id,invalidate=True)

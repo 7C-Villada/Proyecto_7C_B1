@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const FooterStyled = styled.footer.attrs({
     className:"bg-dark text-center text-white",
@@ -49,9 +50,11 @@ const Footer = () => {
                 <SocialMediaButton href={"https://www.youtube.com/channel/UCZLlMVdcLU_UUwmOgTvr1MA"}>
                     <i className="fab fa-youtube"></i>
                 </SocialMediaButton>
-                <SocialMediaButton href={"mailto:aprenderhaciendofund@gmail.com"}>
-                    <i className="fas fa-envelope"></i>
-                </SocialMediaButton>
+                <Link to="/form">
+                    <SocialMediaButton>
+                        <i className="fas fa-envelope"></i>
+                    </SocialMediaButton>
+                </Link>
                 </section>
                 {/* <!-- Section: Social media --> */}
             </div>

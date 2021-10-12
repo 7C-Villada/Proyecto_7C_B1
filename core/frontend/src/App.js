@@ -21,6 +21,7 @@ import Conocenos from "./components/views/Conocenos/Conocenos";
 import Colabora from "./components/views/Colabora/Colabora";
 import Footer from "./components/ui/Footer/Footer";
 import HistoriaDetail from "./components/views/HistoriaDetail/HistoriaDetail";
+import FormMailFundacion from "./components/views/FormMailFundacion/FormMailFundacion";
 // import Colabora from "./components/Pages/Colabora";
 // import CampoEscuela from "./components/Pages/CampoEscuela";
 // import Reserva from "./components/Pages/Reserva";
@@ -42,6 +43,7 @@ function App() {
           <Route path="/conocenos" component={Conocenos} />
           <Route path="/colabora" component={Colabora} />
           <Route path="/historia/:id" component={HistoriaDetail} />
+          <Route path="/form" component={FormMailFundacion} />
           {/* <Route path="*" component={NotFound} /> */}
           <Route path="/" component={Home} exact />
         </Switch>
