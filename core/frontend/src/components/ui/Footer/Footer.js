@@ -36,6 +36,9 @@ const Footer = () => {
                 <section className="mb-4">
                 <SocialMediaButton href={"https://www.instagram.com/fundacionaprenderhaciendo/?igshid=1b7iyx92lmbre"}>
                     <i className="fab fa-instagram"></i>
+                </SocialMediaButton>
+                <SocialMediaButton href={"https://wa.me/543512907756"}>
+                    <i className="fab fa-whatsapp"></i>
                 </SocialMediaButton>                
                 <SocialMediaButton href={"https://www.facebook.com/Fundaci%C3%B3n-Aprender-Haciendo-106219127385194/"}>
                     <i className="fab fa-facebook-f"></i>
