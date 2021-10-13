@@ -40,7 +40,7 @@ class HistoriaAdmin(admin.ModelAdmin):
 class ConvenioAdmin(admin.ModelAdmin):
     '''Admin View for Convenio'''
 
-    list_display = ('localizacion',)
+    list_display = ('organizacion','localizacion',)
     search_fields = ('organizacion', 'localizacion')
 
 @admin.register(MercadoLibreLink)

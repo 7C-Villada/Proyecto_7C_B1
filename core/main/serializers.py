@@ -97,3 +97,8 @@ class HistoriaSerializerList(serializers.ModelSerializer):
         model = Historia
         fields = '__all__'
 
+class ContactoWhatsappSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ContactoWhatsapp
+        fields = '__all__'

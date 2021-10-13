@@ -437,3 +437,27 @@ def ultimosProyectos(request):
 
     except ObjectDoesNotExist:
         return not_found() 
+
+
+@api_view(['GET'])
+def singleNumeroWhatsapp(request):
+
+    """
+    ---
+    ### **Función**
+    Retorna numero de whatsapp
+
+    ---
+    ### **Posibles códigos HTTP**
+    - 200: OK
+    - 204: No hay contenido
+    - 500: Error interno del servidor
+    ---
+    """
+    
+    try:
+        nw = ContactoWhatsapp.objects.get()
+        serializer = ContactoWhatsappSerializer(nw, many=False)
+        return Response(serializer.data)
+    except ObjectDoesNotExist:
+        return no_content()

@@ -83,6 +83,7 @@ class Historia(models.Model): # Las historias serán parte del Libro de Oro
     content = models.TextField(null = False, verbose_name = 'Contenido')
     imageAlbum =  models.ForeignKey(ImageAlbum, on_delete = models.CASCADE, verbose_name = 'Album de imagenes')
     date = models.DateField(null = False, verbose_name = 'Fecha')
+    link = models.CharField(max_length = 300, verbose_name = 'Link Form Inscripción', blank = True, null = True)
 
     class Meta:
         verbose_name = 'Historia'
@@ -146,7 +147,7 @@ class FormaParteLink(SingletonModel):
         verbose_name_plural = 'Link FormaParte'
 
 class ContactoWhatsapp(SingletonModel):
-    number = models.CharField(max_length = 10, null = False, default = '3511234567', verbose_name = 'número')
+    number = models.CharField(max_length = 10, null = False, default = 'Ej.: 3511234567', verbose_name = 'número')
 
     def __str__(self):
         return "Link FormaParte"
