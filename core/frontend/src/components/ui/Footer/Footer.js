@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export const FooterStyled = styled.footer.attrs({
     className:"bg-dark text-center text-white",
@@ -25,6 +26,20 @@ export const SocialMediaButton = styled.a.attrs(props => ({
 
 const Footer = () => {
 
+    const [numeroData, setNumeroData] = useState([]);
+
+    useEffect(() => {
+        axios.get("/api/numero-wp").then((response) => {
+            let num = response.data.number;
+            let statusCode = response.status;
+            if (statusCode === 200) {
+                setNumeroData(num);
+            } else {
+                console.log('No num provided ;)')
+            }
+        });
+    }, []);
+
     return (
         <>
             {/* <!-- Remove the container if you want to extend the Footer to full width. --> */}
@@ -38,7 +53,7 @@ const Footer = () => {
                 <SocialMediaButton href={"https://www.instagram.com/fundacionaprenderhaciendo/?igshid=1b7iyx92lmbre"}>
                     <i className="fab fa-instagram"></i>
                 </SocialMediaButton>
-                <SocialMediaButton href={"https://wa.me/543512907756"}>
+                <SocialMediaButton href={"https://wa.me/54" + numeroData}>
                     <i className="fab fa-whatsapp"></i>
                 </SocialMediaButton>                
                 <SocialMediaButton href={"https://www.facebook.com/Fundaci%C3%B3n-Aprender-Haciendo-106219127385194/"}>

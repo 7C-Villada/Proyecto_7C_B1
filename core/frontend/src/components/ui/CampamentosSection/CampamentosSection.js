@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
-import imgCard1 from './static/unsplash-photo-1.jpg';
-import imgCard2 from './static/unsplash-photo-2.jpg';
-import imgCard3 from './static/unsplash-photo-3.jpg';
 import logo from '../Navbar/Logo.png';
 import { HashLink as Link } from 'react-router-hash-link';
 import axios from "axios";

@@ -150,7 +150,7 @@ class ContactoWhatsapp(SingletonModel):
     number = models.CharField(max_length = 10, null = False, default = 'Ej.: 3511234567', verbose_name = 'número')
 
     def __str__(self):
-        return "Link FormaParte"
+        return "Número Whatsapp"
 
     class Meta:
         verbose_name = "Número Whatsapp"
