@@ -36,11 +36,39 @@ export const CarouselItem = styled.div.attrs(props => ({
     
   `; 
 
+  export const ButtonFormaParte = styled.button.attrs(props =>({
+    className: "btn px-4 mb-5 gap-3 rounded-pill",
+    type: "button",
+    onClick: props.function,
+  }))`
+    color: #f8f0bb !important;
+    font-size: 1.6rem;
+    background-color: #49a651;
+    border-color: #49a651;
+    box-shadow: 0px 3px 6px black;
+    $btn-padding-y: "10";
+    &:hover {
+      color: #49a651 !important;
+      background-color: #f8f0bb;
+      border-color: #50b559;
+    }
+    &:focus {
+      outline: none !important;
+      box-shadow: none;
+    }
+  
+    @media screen and (max-width: 480px) {
+      font-size: 1.2rem;
+    }
+  `;
+
 const HistoriaDetail = () => {
   const { id } = useParams();
 
   const [historiaData, setHistoriaData] = useState([]);
   const [albumData, setAlbumData] = useState([]);
+
+  var endpoint = "/api/historia/" + id;
 
   useEffect(() => {
     let config = {
@@ -48,27 +76,39 @@ const HistoriaDetail = () => {
         'Access-Control-Allow-Origin': '*',
       }
     }
-    var endpoint = "/api/historia/" + id;
 
     axios
       .get(endpoint, config)
       .then((response) => {
         setHistoriaData(response.data);
-        console.log(response.data.content);
         axios
         .get("/api/image-album/" + response.data.imageAlbum , config)
         .then((response) => {
           setAlbumData(response.data.images);
         })
         .catch((error) => {
-          console.log(error);
         });
       })
       .catch((error) => {
-        console.log(error);
-        console.log(error.response.status);
       });
   }, []);
+
+  const getFormUrl = () => {
+    axios.get(endpoint).then((response) => {
+      let link = response.data.link;
+      let statusCode = response.status;
+      if (statusCode === 200) {
+        if (link.includes('https://')) {
+          window.open(link, "_blank");
+        } else {
+          link = 'https://' + link;
+          window.open(link, "_blank");
+        }
+      } else {
+        console.log('No link provided ;)')
+      }
+    });
+  };
 
   let isActive = true;
 
@@ -85,6 +125,16 @@ const HistoriaDetail = () => {
         </Content>
       </div>
 
+    {
+      // console.log(historiaData.link + "caca")
+      historiaData.link !== null ? 
+      <div className="container pt-4 pb-5 px-3 d-flex justify-content-center">
+        <ButtonFormaParte function={getFormUrl}>Inscribirse</ButtonFormaParte>
+      </div>
+      :
+      <div></div>
+    }
+
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
         {
@@ -95,7 +145,6 @@ const HistoriaDetail = () => {
 
             if (isActive) {
               isActive = false;
-              console.log(isActive);
               return (
                 <CarouselItem active>
                   <img src={img} className="d-block w-100" alt="..."></img>
