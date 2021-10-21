@@ -38,7 +38,7 @@ const Hero = () => {
         </HeroBackground>
         <div className="col-lg-12 align-self-center">
           <H1Styled primary>Aprender</H1Styled>
-          <H1Styled >Haciendo</H1Styled>
+          <H1Styled primary>Haciendo</H1Styled>
           <div className="container">
             <PDescription>
               Nuestro objetivo principal es educar en la concientización del

@@ -19,7 +19,7 @@ export const NavButton = styled.button.attrs({
   margin-right: 2px;
   color: #f8f0bb !important;
   &:hover {
-    background-color: #49a651;
+    background-color: #618817;
   }
   &:focus {
     outline: none !important;
@@ -34,7 +34,7 @@ export const NavButtonDropdown = styled.button.attrs({
   margin-right: 2px;
   color: #f8f0bb !important;
   &:hover {
-    background-color: #49a651 !important;
+    background-color: #618817 !important;
   }
   &:focus {
     outline: none !important;
@@ -53,12 +53,12 @@ export const ButtonColabora = styled.button.attrs({
 })`
   margin-left: 2px;
   margin-right: 2px;
-  color: #49a651;
-  border-color: #49a651;
+  color: #618817;
+  border-color: #618817;
   $btn-padding-y: "10";
   &:hover {
-    background-color: #50b559;
-    border-color: #50b559;
+    background-color: #618817;
+    border-color: #618817;
     color: white;
   }
   &:focus {

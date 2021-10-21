@@ -6,7 +6,7 @@ import video from "../../../../videos/video.mp4";
 export const H1Styled = styled.h1.attrs({
   className: "display-5 fw-bold",
 })`
-  color: ${(props) => (props.primary ? "#49A651" : "#F8F0BB")};
+  color: ${(props) => (props.primary ? "#618817" : "#F8F0BB")}; //49A651
   font-size: 5rem;
   text-align: center;
   text-shadow: 0px 0px 6px black;
@@ -30,14 +30,14 @@ export const ButtonFormaParte = styled.button.attrs(props =>({
 }))`
   color: #f8f0bb !important;
   font-size: 1.6rem;
-  background-color: #49a651;
-  border-color: #49a651;
+  background-color: #618817;
+  border-color: #618817;
   box-shadow: 0px 3px 6px black;
   $btn-padding-y: "10";
   &:hover {
-    color: #49a651 !important;
+    color: #618817 !important;
     background-color: #f8f0bb;
-    border-color: #50b559;
+    border-color: #618817;
   }
   &:focus {
     outline: none !important;

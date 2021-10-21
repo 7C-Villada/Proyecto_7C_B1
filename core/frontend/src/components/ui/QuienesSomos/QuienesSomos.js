@@ -20,7 +20,7 @@ export const Card = styled.div.attrs({
 
   &:hover {
     background-image: linear-gradient(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.2)), url(${(props) => props.bg});
-    border-color: #50b559;
+    border-color: #618817;
     transform: scale(1.06);
   }
 `;
