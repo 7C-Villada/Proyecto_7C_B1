@@ -43,14 +43,14 @@ export const CarouselItem = styled.div.attrs(props => ({
   }))`
     color: #f8f0bb !important;
     font-size: 1.6rem;
-    background-color: #49a651;
-    border-color: #49a651;
+    background-color: #618817;
+    border-color: #618817;
     box-shadow: 0px 3px 6px black;
     $btn-padding-y: "10";
     &:hover {
-      color: #49a651 !important;
+      color: #618817 !important;
       background-color: #f8f0bb;
-      border-color: #50b559;
+      border-color: #618817;
     }
     &:focus {
       outline: none !important;
