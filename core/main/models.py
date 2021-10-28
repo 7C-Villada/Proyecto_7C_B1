@@ -69,6 +69,7 @@ class Taller(Actividad):
     tipo = models.IntegerField(default=2)
     imagen = cloudinary.models.CloudinaryField('image', folder='media/')
     proyectos = models.ManyToManyField(Proyecto, related_name='talleres', verbose_name = 'Proyectos')
+    link = models.CharField(max_length = 300, verbose_name = 'Link Form Inscripción', blank = True, null = True)
     tracker = FieldTracker()
 
     class Meta:

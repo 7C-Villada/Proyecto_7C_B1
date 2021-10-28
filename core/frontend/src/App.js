@@ -22,6 +22,8 @@ import Footer from "./components/ui/Footer/Footer";
 import HistoriaDetail from "./components/views/HistoriaDetail/HistoriaDetail";
 import FormMailFundacion from "./components/views/FormMailFundacion/FormMailFundacion";
 import TalleresProyectos from "./components/views/TalleresProyectos";
+import TallerDetail from "./components/views/TallerDetail/TallerDetail";
+import ProyectoDetail from "./components/views/ProyectoDetail/ProyectoDetail";
 // import Colabora from "./components/Pages/Colabora";
 // import CampoEscuela from "./components/Pages/CampoEscuela";
 // import Reserva from "./components/Pages/Reserva";
@@ -43,6 +45,8 @@ function App() {
           <Route path="/conocenos" component={Conocenos} />
           <Route path="/colabora" component={Colabora} />
           <Route path="/historia/:id" component={HistoriaDetail} />
+          <Route path="/taller/:id" component={TallerDetail} />
+          <Route path="/proyecto/:id" component={ProyectoDetail} />
           <Route path="/form" component={FormMailFundacion} />
           {/* <Route path="*" component={NotFound} /> */}
           <Route path="/" component={Home} exact />

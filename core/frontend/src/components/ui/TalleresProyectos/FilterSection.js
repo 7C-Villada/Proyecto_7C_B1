@@ -63,11 +63,20 @@ const FilterSection = () => {
         </div>
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch py-4">
           {filteredData.map((item) => {
+            
+            var link;
+            if (item.tipo === 1) {
+              link = "/proyecto/" + item.id;
+            } else {
+              link = "/taller/" + item.id;
+            }
+
             return (
               <TyPCard
                 randomImage={item.imagen}
                 title={item.title}
                 date={item.startDate}
+                link={link}
               />
             );
           })}

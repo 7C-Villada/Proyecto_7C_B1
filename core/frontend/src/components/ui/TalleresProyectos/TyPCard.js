@@ -7,7 +7,7 @@ const TyPCard = (props) => {
   return (
     <>
       <div className="col py-2">
-        <Link to="google.com" className="text-decoration-none">
+        <Link to={props.link} className="text-decoration-none">
           <Card
             bg={`https://res.cloudinary.com/aprenderhaciendo/${props.randomImage}`}
           >
