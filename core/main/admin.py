@@ -21,6 +21,7 @@ class ProyectoAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', 'startDate')
     list_filter = ('startDate',)
     search_fields = ('title', 'description', 'startDate')
+    exclude = ('tipo',)
 
 @admin.register(Taller)
 class TallerAdmin(admin.ModelAdmin):
@@ -29,6 +30,7 @@ class TallerAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', 'startDate')
     list_filter = ('startDate',)
     search_fields = ('title', 'description', 'startDate')
+    exclude = ('tipo',)
 
 @admin.register(Historia)
 class HistoriaAdmin(admin.ModelAdmin):

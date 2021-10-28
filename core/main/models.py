@@ -52,6 +52,7 @@ class Actividad(models.Model):
 
 #Serialized
 class Proyecto(Actividad):
+    tipo = models.IntegerField(default=1)
     imagen = cloudinary.models.CloudinaryField('image', folder='media/')
     tracker = FieldTracker()
 
@@ -65,6 +66,7 @@ class Proyecto(Actividad):
 
 #Serialized
 class Taller(Actividad):
+    tipo = models.IntegerField(default=2)
     imagen = cloudinary.models.CloudinaryField('image', folder='media/')
     proyectos = models.ManyToManyField(Proyecto, related_name='talleres', verbose_name = 'Proyectos')
     tracker = FieldTracker()
