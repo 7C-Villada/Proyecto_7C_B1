@@ -7,7 +7,6 @@ import CardSection from "../../ui/CardSection/CardSection";
 import { Divider } from "../../ui/Divider/Divider";
 // import ConveniosSection from "../../ui/ConveniosSection/ConveniosSection";
 import MapSection from "../../ui/MapSection/MapSection";
-import CalendarSection from "../../ui/CalendarSection/CalendarSection";
 
 const CarouselSection = React.lazy(() =>
   import("../../ui/CarouselSection/CarouselSection")
