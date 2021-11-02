@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Header } from "../CampamentosSection/CampamentosSection";
 import TyPCard from "./TyPCard";
+import CalendarFilter from "../CalendarSection/CalendarFilter";
 
 const FilterSection = () => {
   const [talleres, setTalleres] = useState([]);
   const [proyectos, setProyectos] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState(talleresproyectos);
 
-  let hola = [];
+  const talleresproyectos = [...talleres, ...proyectos];
 
   useEffect(() => {
     axios
       .get("/api/taller/")
       .then((response) => {
         setTalleres(response.data);
-        hola = hola.concat(response.data);
-        // console.log(hola);
+        talleresproyectos.push(...response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -25,25 +25,25 @@ const FilterSection = () => {
       .get("/api/proyecto/")
       .then((response) => {
         setProyectos(response.data);
-        hola = hola.concat(response.data);
-        // console.log(hola);
-        setFilteredData(hola);
+        talleresproyectos.push(...response.data);
       })
       .catch((error) => {
         console.log(error);
       });
+
+    console.log(talleresproyectos);
   }, []);
 
   const handleFilteredData = (event) => {
     let resultadoBusqueda = event.target.value;
-    let talleresproyectos = talleres.concat(proyectos);
+    console.log(talleresproyectos);
 
     let result = [];
-    result = talleresproyectos.filter((tp) => {
+    result = talleresproyectos.filter((tp, index) => {
       return tp.title.search(resultadoBusqueda) !== -1;
     });
 
-    setFilteredData(result);
+    talleresproyectos.push(result);
   };
 
   return (
@@ -54,15 +54,18 @@ const FilterSection = () => {
           <p className="col-md-8 fs-4">
             Descubre nuestros Talleres y Proyectos.
           </p>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Buscar"
-            onChange={handleFilteredData}
-          ></input>
+          <div className="d-flex flex-row">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Buscar"
+              onChange={handleFilteredData}
+            ></input>
+            <CalendarFilter />
+          </div>
         </div>
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch py-4">
-          {filteredData.map((item) => {
+          {talleresproyectos.map((item) => {
             
             var link;
             if (item.tipo === 1) {

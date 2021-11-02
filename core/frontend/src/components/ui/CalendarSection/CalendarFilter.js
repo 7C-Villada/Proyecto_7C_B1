@@ -3,7 +3,7 @@ import DatePicker from "react-date-picker";
 import "./DatePicker.css";
 import "./Calendar.css";
 
-const CalendarSection = () => {
+const CalendarFilter = () => {
   const [value, onChange] = useState(new Date());
 
   return (
@@ -18,4 +18,4 @@ const CalendarSection = () => {
   );
 };
 
-export default CalendarSection;
+export default CalendarFilter;
