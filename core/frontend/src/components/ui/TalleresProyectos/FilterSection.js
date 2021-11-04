@@ -3,6 +3,7 @@ import axios from "axios";
 import { Header } from "../CampamentosSection/CampamentosSection";
 import TyPCard from "./TyPCard";
 import CalendarFilter from "../CalendarSection/CalendarFilter";
+import { FilterContainer } from "./FilterSectionElements";
 
 const FilterSection = () => {
   // const [talleres, setTalleres] = useState([]);
@@ -41,7 +42,7 @@ const FilterSection = () => {
           <p className="col-md-8 fs-4">
             Descubre nuestros Talleres y Proyectos.
           </p>
-          <div className="d-flex flex-row">
+          <FilterContainer>
             <input
               type="text"
               className="form-control"
@@ -49,7 +50,7 @@ const FilterSection = () => {
               onChange={handleFilteredData}
             ></input>
             <CalendarFilter />
-          </div>
+          </FilterContainer>
         </div>
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch py-4">
           {filteredData.map((item) => {
