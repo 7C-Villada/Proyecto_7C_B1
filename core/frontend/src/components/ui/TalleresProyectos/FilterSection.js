@@ -5,45 +5,32 @@ import TyPCard from "./TyPCard";
 import CalendarFilter from "../CalendarSection/CalendarFilter";
 
 const FilterSection = () => {
-  const [talleres, setTalleres] = useState([]);
-  const [proyectos, setProyectos] = useState([]);
-  const [filteredData, setFilteredData] = useState(talleresproyectos);
-
-  const talleresproyectos = [...talleres, ...proyectos];
+  // const [talleres, setTalleres] = useState([]);
+  // const [proyectos, setProyectos] = useState([]);
+  const [items, setItems] = useState([]);
+  const [filteredData, setFilteredData] = useState(items);
 
   useEffect(() => {
-    axios
-      .get("/api/taller/")
-      .then((response) => {
-        setTalleres(response.data);
-        talleresproyectos.push(...response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    axios
-      .get("/api/proyecto/")
-      .then((response) => {
-        setProyectos(response.data);
-        talleresproyectos.push(...response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const talleres = axios.get("/api/taller");
+    const proyectos = axios.get("/api/proyecto/");
 
-    console.log(talleresproyectos);
+    axios.all([talleres, proyectos]).then(
+      axios.spread((...responses) => {
+        setItems(responses[0].data.concat(responses[1].data));
+        setFilteredData(responses[0].data.concat(responses[1].data));
+      })
+    );
   }, []);
 
   const handleFilteredData = (event) => {
-    let resultadoBusqueda = event.target.value;
-    console.log(talleresproyectos);
+    let resultadoBusqueda = event.target.value.toLowerCase();
 
     let result = [];
-    result = talleresproyectos.filter((tp, index) => {
-      return tp.title.search(resultadoBusqueda) !== -1;
+    result = items.filter((tp) => {
+      return tp.title.toLowerCase().search(resultadoBusqueda) !== -1;
     });
 
-    talleresproyectos.push(result);
+    setFilteredData(result);
   };
 
   return (
@@ -65,21 +52,12 @@ const FilterSection = () => {
           </div>
         </div>
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch py-4">
-          {talleresproyectos.map((item) => {
-            
-            var link;
-            if (item.tipo === 1) {
-              link = "/proyecto/" + item.id;
-            } else {
-              link = "/taller/" + item.id;
-            }
-
+          {filteredData.map((item) => {
             return (
               <TyPCard
                 randomImage={item.imagen}
                 title={item.title}
                 date={item.startDate}
-                link={link}
               />
             );
           })}
