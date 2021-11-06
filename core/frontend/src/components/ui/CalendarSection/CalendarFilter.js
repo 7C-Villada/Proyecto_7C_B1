@@ -6,10 +6,15 @@ import "./Calendar.css";
 const CalendarFilter = () => {
   const [value, onChange] = useState(new Date());
 
+  const handleCalendar = (value) => {
+    onChange(value);
+    console.log(value);
+  };
+
   return (
     <>
       <DatePicker
-        onChange={onChange}
+        onChange={handleCalendar}
         value={value}
         locale="es-MX"
         className="react-date-picker"

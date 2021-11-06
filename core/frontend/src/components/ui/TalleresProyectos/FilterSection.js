@@ -3,7 +3,7 @@ import axios from "axios";
 import { Header } from "../CampamentosSection/CampamentosSection";
 import TyPCard from "./TyPCard";
 import CalendarFilter from "../CalendarSection/CalendarFilter";
-import { FilterContainer } from "./FilterSectionElements";
+import { FilterContainer, SearchInput } from "./FilterSectionElements";
 
 const FilterSection = () => {
   // const [talleres, setTalleres] = useState([]);
@@ -43,12 +43,12 @@ const FilterSection = () => {
             Descubre nuestros Talleres y Proyectos.
           </p>
           <FilterContainer>
-            <input
+            <SearchInput
               type="text"
               className="form-control"
               placeholder="Buscar"
               onChange={handleFilteredData}
-            ></input>
+            ></SearchInput>
             <CalendarFilter />
           </FilterContainer>
         </div>

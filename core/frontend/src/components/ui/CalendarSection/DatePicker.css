@@ -90,3 +90,9 @@
 .react-date-picker__calendar .react-calendar {
   border-width: thin;
 }
+
+@media only screen and (max-width: 576px) {
+  .react-date-picker__wrapper {
+    border-radius: 0 0 10px 10px;
+  }
+}
