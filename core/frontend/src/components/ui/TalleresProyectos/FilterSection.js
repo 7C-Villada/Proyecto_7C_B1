@@ -6,8 +6,6 @@ import CalendarFilter from "../CalendarSection/CalendarFilter";
 import { FilterContainer, SearchInput } from "./FilterSectionElements";
 
 const FilterSection = () => {
-  // const [talleres, setTalleres] = useState([]);
-  // const [proyectos, setProyectos] = useState([]);
   const [items, setItems] = useState([]);
   const [filteredData, setFilteredData] = useState(items);
 
@@ -17,14 +15,32 @@ const FilterSection = () => {
 
     axios.all([talleres, proyectos]).then(
       axios.spread((...responses) => {
+        console.log(responses[0].data.concat(responses[1].data));
         setItems(responses[0].data.concat(responses[1].data));
         setFilteredData(responses[0].data.concat(responses[1].data));
       })
     );
   }, []);
 
+  //This function acts as a callback and a filter
+  const handleCallback = (date) => {
+    console.log(date);
+    if (date !== null) {
+      let result = [];
+
+      result = filteredData.filter((tp) => {
+        return tp.startDate === date.toISOString().substring(0, 10);
+      });
+
+      setFilteredData(result);
+    } else {
+      setFilteredData(items);
+    }
+  };
+
   const handleFilteredData = (event) => {
     let resultadoBusqueda = event.target.value.toLowerCase();
+    let hola = filteredData;
 
     let result = [];
     result = items.filter((tp) => {
@@ -49,7 +65,7 @@ const FilterSection = () => {
               placeholder="Buscar"
               onChange={handleFilteredData}
             ></SearchInput>
-            <CalendarFilter />
+            <CalendarFilter parentCallback={handleCallback} />
           </FilterContainer>
         </div>
         <div className="row row-cols-1 row-cols-lg-3 align-items-stretch py-4">

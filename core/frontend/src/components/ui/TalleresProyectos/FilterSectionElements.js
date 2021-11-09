@@ -12,4 +12,8 @@ export const SearchInput = styled.input.attrs({
   placeholder: "Buscar",
 })`
   border-radius: 75px 0 0 75px;
+
+  @media screen and (max-width: 576px) {
+    border-radius: 10px 10px 0 0;
+  }
 `;

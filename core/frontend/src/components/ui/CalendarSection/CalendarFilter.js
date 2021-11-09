@@ -3,12 +3,12 @@ import DatePicker from "react-date-picker";
 import "./DatePicker.css";
 import "./Calendar.css";
 
-const CalendarFilter = () => {
-  const [value, onChange] = useState(new Date());
+const CalendarFilter = (props) => {
+  const [value, onChange] = useState(null);
 
   const handleCalendar = (value) => {
     onChange(value);
-    console.log(value);
+    value ? props.parentCallback(value) : props.parentCallback(value);
   };
 
   return (
