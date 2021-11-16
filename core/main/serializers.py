@@ -27,6 +27,8 @@ class MercadoPagoLinkSerializer(serializers.ModelSerializer):
 
 class TallerSerializerDetail(serializers.ModelSerializer):
 
+    startDate = serializers.DateField(format="%d-%m-%Y")
+
     class Meta:
         model = Taller
         fields = '__all__'
@@ -34,11 +36,15 @@ class TallerSerializerDetail(serializers.ModelSerializer):
 
 class TallerSerializerList(serializers.ModelSerializer):
 
+    startDate = serializers.DateField(format="%d-%m-%Y")
+
     class Meta:
         model = Taller
         exclude = ['proyectos']
 
 class TallerFromProyectoSerializer(serializers.ModelSerializer):
+
+    startDate = serializers.DateField(format="%d-%m-%Y")
 
     class Meta:
         model = Taller
@@ -47,12 +53,15 @@ class TallerFromProyectoSerializer(serializers.ModelSerializer):
 class ProyectoSerializerDetail(serializers.ModelSerializer):
 
     talleres = TallerFromProyectoSerializer(many=True)
+    startDate = serializers.DateField(format="%d-%m-%Y")
 
     class Meta:
         model = Proyecto
         fields = ['id','title','description','startDate','imagen','talleres']
 
 class ProyectoSerializerList(serializers.ModelSerializer):
+
+    startDate = serializers.DateField(format="%d-%m-%Y")
 
     class Meta:
         model = Proyecto
