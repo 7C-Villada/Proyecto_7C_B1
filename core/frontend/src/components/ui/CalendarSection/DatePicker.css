@@ -21,6 +21,7 @@
   border: 2px solid rgb(62, 35, 7);
   border-radius: 0 75px 75px 0;
   padding-right: 10px;
+  background-color: #e5e4e2;
 }
 .react-date-picker__inputGroup {
   min-width: calc((4px * 3) + 0.54em * 8 + 0.217em * 2);
